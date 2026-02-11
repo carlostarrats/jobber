@@ -13,7 +13,7 @@ import os
 import re
 import time
 from pathlib import Path
-from serpapi import GoogleSearch
+from serpapi import GoogleSearch  # from google-search-results package
 
 SERPAPI_KEY = os.environ.get("SERPAPI_KEY")
 if not SERPAPI_KEY:
