@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -11,26 +11,38 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import Image from "next/image";
 import jobs from "@/data/jobs.json";
 
 type Job = {
   id: string;
   title: string;
   company: string;
+  companyUrl: string;
   location: string;
+  city: string;
   remote: boolean;
   url: string;
   platform: "greenhouse" | "lever" | "ashby";
+  roleType: string;
   posted: string;
   scraped: string;
 };
 
 const allJobs = jobs as Job[];
 
-const PLATFORM_COLORS: Record<string, string> = {
-  greenhouse: "bg-emerald-100 text-emerald-800",
-  lever: "bg-blue-100 text-blue-800",
-  ashby: "bg-purple-100 text-purple-800",
+const ROLE_LABELS: Record<string, string> = {
+  product_design: "Product Design",
+  ui_design: "UI/UX Design",
+  visual_design: "Visual Design",
+  ux_research: "UX Research",
+  content_design: "Content Design",
+  design_engineering: "Design Engineering",
+  design_systems: "Design Systems",
+  brand_design: "Brand Design",
+  web_design: "Web Design",
+  design_leadership: "Design Leadership",
+  other_design: "Other Design",
 };
 
 function formatDate(dateStr: string) {
@@ -39,7 +51,6 @@ function formatDate(dateStr: string) {
   return date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
-    year: "numeric",
   });
 }
 
@@ -49,124 +60,242 @@ function formatCompany(slug: string) {
     .replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
+// localStorage helpers for archive
+const ARCHIVE_KEY = "jobber_archived";
+
+function getArchived(): Set<string> {
+  if (typeof window === "undefined") return new Set();
+  try {
+    const stored = localStorage.getItem(ARCHIVE_KEY);
+    return stored ? new Set(JSON.parse(stored)) : new Set();
+  } catch {
+    return new Set();
+  }
+}
+
+function saveArchived(ids: Set<string>) {
+  localStorage.setItem(ARCHIVE_KEY, JSON.stringify([...ids]));
+}
+
 export default function Home() {
   const [search, setSearch] = useState("");
-  const [platform, setPlatform] = useState("all");
-  const [remoteOnly, setRemoteOnly] = useState(false);
+  const [roleType, setRoleType] = useState("all");
+  const [location, setLocation] = useState("all");
+  const [showArchived, setShowArchived] = useState(false);
+  const [archived, setArchived] = useState<Set<string>>(new Set());
+
+  // Load archived from localStorage on mount
+  useEffect(() => {
+    setArchived(getArchived());
+  }, []);
+
+  const toggleArchive = useCallback(
+    (id: string) => {
+      setArchived((prev) => {
+        const next = new Set(prev);
+        if (next.has(id)) {
+          next.delete(id);
+        } else {
+          next.add(id);
+        }
+        saveArchived(next);
+        return next;
+      });
+    },
+    []
+  );
+
+  // Collect unique locations for the filter dropdown
+  const locations = useMemo(() => {
+    const cities = new Set<string>();
+    allJobs.forEach((job) => {
+      if (job.city) cities.add(job.city);
+    });
+    return Array.from(cities).sort();
+  }, []);
+
+  // Collect unique role types present in data
+  const roleTypes = useMemo(() => {
+    const types = new Set<string>();
+    allJobs.forEach((job) => {
+      if (job.roleType) types.add(job.roleType);
+    });
+    return Array.from(types).sort();
+  }, []);
 
   const filtered = useMemo(() => {
     return allJobs.filter((job) => {
+      const isArchived = archived.has(job.id);
+      if (showArchived && !isArchived) return false;
+      if (!showArchived && isArchived) return false;
+
       const matchesSearch =
         !search ||
         job.title.toLowerCase().includes(search.toLowerCase()) ||
         job.company.toLowerCase().includes(search.toLowerCase()) ||
         job.location.toLowerCase().includes(search.toLowerCase());
-      const matchesPlatform =
-        platform === "all" || job.platform === platform;
-      const matchesRemote = !remoteOnly || job.remote;
-      return matchesSearch && matchesPlatform && matchesRemote;
+      const matchesRole =
+        roleType === "all" || job.roleType === roleType;
+      const matchesLocation =
+        location === "all" ||
+        (location === "remote" && job.remote) ||
+        job.city === location;
+      return matchesSearch && matchesRole && matchesLocation;
     });
-  }, [search, platform, remoteOnly]);
+  }, [search, roleType, location, showArchived, archived]);
+
+  const archivedCount = useMemo(
+    () => allJobs.filter((j) => archived.has(j.id)).length,
+    [archived]
+  );
 
   return (
-    <div className="min-h-screen bg-background">
-      <header className="border-b">
-        <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6">
-          <h1 className="text-3xl font-bold tracking-tight">Jobber</h1>
-          <p className="mt-1 text-muted-foreground">
-            Free design job board. Updated weekly from Greenhouse, Lever, and
-            Ashby.
-          </p>
+    <div className="min-h-screen">
+      <header>
+        <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 flex flex-col items-center">
+          <Image
+            src="/jobber-logo.svg"
+            alt="Jobber"
+            width={180}
+            height={40}
+            priority
+          />
+          {allJobs.length > 0 && (
+            <p className="mt-4 text-sm text-muted-foreground">
+              Last scraped: {formatDate(allJobs[0]?.scraped)} ({allJobs.length} Jobs)
+            </p>
+          )}
         </div>
       </header>
 
-      <main className="mx-auto max-w-5xl px-4 py-6 sm:px-6">
+      <main className="mx-auto max-w-5xl px-4 pt-0 pb-6 sm:px-6">
         {/* Filters */}
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
           <Input
             placeholder="Search jobs, companies, locations..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="sm:max-w-sm"
+            className="sm:max-w-xs bg-gray-800 text-white placeholder:text-gray-400 border-gray-700"
           />
-          <Select value={platform} onValueChange={setPlatform}>
-            <SelectTrigger className="w-[160px]">
+          <Select value={roleType} onValueChange={setRoleType}>
+            <SelectTrigger className="w-[180px] bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">All platforms</SelectItem>
-              <SelectItem value="greenhouse">Greenhouse</SelectItem>
-              <SelectItem value="lever">Lever</SelectItem>
-              <SelectItem value="ashby">Ashby</SelectItem>
+              <SelectItem value="all">All roles</SelectItem>
+              {roleTypes.map((type) => (
+                <SelectItem key={type} value={type}>
+                  {ROLE_LABELS[type] || type}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
-          <Button
-            variant={remoteOnly ? "default" : "outline"}
-            size="sm"
-            onClick={() => setRemoteOnly(!remoteOnly)}
-          >
-            Remote only
-          </Button>
-          <span className="text-sm text-muted-foreground sm:ml-auto">
-            {filtered.length} {filtered.length === 1 ? "job" : "jobs"}
-          </span>
+          <Select value={location} onValueChange={setLocation}>
+            <SelectTrigger className="w-[180px] bg-gray-800 text-white border-gray-700">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">All locations</SelectItem>
+              <SelectItem value="remote">Remote</SelectItem>
+              {locations.map((loc) => (
+                <SelectItem key={loc} value={loc}>
+                  {loc}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <div className="flex items-center gap-2 sm:ml-auto">
+            <Button
+              variant="outline"
+              size="sm"
+              className="bg-white/50 border-white/50 hover:bg-gray-800 hover:text-white"
+              onClick={() => setShowArchived(!showArchived)}
+            >
+              {showArchived
+                ? "Back"
+                : `View archived (${archivedCount})`}
+            </Button>
+          </div>
         </div>
 
         {/* Job list */}
-        <div className="mt-6 space-y-3">
+        <div className="mt-6 space-y-2">
           {filtered.length === 0 && (
             <p className="py-12 text-center text-muted-foreground">
-              No jobs match your filters.
+              {showArchived
+                ? "No archived jobs."
+                : "No jobs match your filters."}
             </p>
           )}
           {filtered.map((job) => (
-            <a
+            <div
               key={job.id}
-              href={job.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group block rounded-lg border p-4 transition-colors hover:bg-accent/50"
+              className="group flex items-start gap-4 rounded-lg border p-4 transition-colors bg-white/50 hover:bg-white/70"
             >
-              <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
-                <div className="min-w-0 flex-1">
-                  <h2 className="font-semibold group-hover:underline">
+              <div className="min-w-0 flex-1">
+                <div className="flex flex-wrap items-center gap-2">
+                  <a
+                    href={job.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold hover:underline"
+                  >
                     {job.title}
-                  </h2>
-                  <p className="mt-0.5 text-sm text-muted-foreground">
-                    {formatCompany(job.company)} &middot; {job.location}
-                  </p>
+                  </a>
+                  {job.posted && (
+                    <span className="text-sm text-muted-foreground">
+                      {formatDate(job.posted)}
+                    </span>
+                  )}
                 </div>
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                  {job.companyUrl ? (
+                    <a
+                      href={job.companyUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-foreground hover:underline"
+                    >
+                      {formatCompany(job.company)}
+                    </a>
+                  ) : (
+                    <span className="font-medium text-foreground">
+                      {formatCompany(job.company)}
+                    </span>
+                  )}
+                  {job.city && <span>{job.city}</span>}
                   {job.remote && (
                     <Badge variant="secondary" className="text-xs">
                       Remote
                     </Badge>
                   )}
-                  <Badge
-                    variant="outline"
-                    className={`text-xs border-0 ${PLATFORM_COLORS[job.platform] || ""}`}
-                  >
-                    {job.platform}
-                  </Badge>
-                  {job.posted && (
-                    <span className="text-xs text-muted-foreground">
-                      {formatDate(job.posted)}
-                    </span>
-                  )}
                 </div>
               </div>
-            </a>
+              <div className="flex shrink-0 items-center gap-2">
+                <a
+                  href={job.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button variant="outline" size="sm" className="hover:bg-gray-800 hover:text-white">
+                    Apply
+                  </Button>
+                </a>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={() => toggleArchive(job.id)}
+                  className="text-xs text-muted-foreground hover:bg-gray-800 hover:text-white"
+                >
+                  {archived.has(job.id) ? "Unarchive" : "Archive"}
+                </Button>
+              </div>
+            </div>
           ))}
         </div>
 
-        {/* Footer */}
-        <footer className="mt-12 border-t pt-6 pb-8 text-center text-sm text-muted-foreground">
-          {allJobs.length > 0 && (
-            <p>
-              Last scraped: {formatDate(allJobs[0]?.scraped)}. Data sourced from
-              public job boards.
-            </p>
-          )}
+        <footer className="mt-12 pt-6 pb-8 text-center text-sm text-muted-foreground">
+          <p>Data sourced from publicly available job boards.</p>
         </footer>
       </main>
     </div>
