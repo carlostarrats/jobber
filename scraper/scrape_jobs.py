@@ -224,10 +224,10 @@ def scrape_lever(slug):
 
 
 def scrape_ashby(slug):
-    """Ashby uses a POST endpoint for job listings."""
-    url = "https://api.ashbyhq.com/posting-api/job-board"
+    """Ashby has a public GET endpoint for job board listings."""
+    url = f"https://api.ashbyhq.com/posting-api/job-board/{slug}"
     try:
-        resp = SESSION.post(url, json={"jobBoardId": slug}, timeout=10)
+        resp = SESSION.get(url, timeout=10)
         if resp.status_code != 200:
             return []
         data = resp.json()
@@ -244,8 +244,7 @@ def scrape_ashby(slug):
                 company_url = get_ashby_company_url(slug)
 
             location = job.get("location", "Unknown")
-            if isinstance(location, dict):
-                location = location.get("name", "Unknown")
+            is_remote = job.get("isRemote", False)
             published = job.get("publishedAt", "")
 
             jobs.append({
@@ -253,9 +252,9 @@ def scrape_ashby(slug):
                 "title": title,
                 "company": slug,
                 "companyUrl": company_url,
-                "location": location if isinstance(location, str) else "Unknown",
-                "city": extract_city(location if isinstance(location, str) else ""),
-                "remote": "remote" in str(location).lower(),
+                "location": location,
+                "city": extract_city(location),
+                "remote": is_remote or "remote" in location.lower(),
                 "url": job.get("jobUrl", f"https://jobs.ashbyhq.com/{slug}/{job.get('id', '')}"),
                 "platform": "ashby",
                 "roleType": categorize_role(title),
