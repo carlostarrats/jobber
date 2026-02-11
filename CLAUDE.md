@@ -6,6 +6,7 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 
 - **scraper/** — Python scripts that discover companies and scrape job listings
   - `discover_companies.py` — Uses SerpAPI to find company slugs via Google dorking
+  - `expand_companies.py` — Bulk expands companies.json with ~500 curated tech company slugs, validates each against public APIs using ThreadPoolExecutor (5 workers per platform), merges valid ones. No API keys needed.
   - `scrape_jobs.py` — Hits public JSON APIs for Greenhouse, Lever, Ashby; filters for design roles; outputs `jobs.json`
   - No database — everything is flat JSON files (`companies.json`, `jobs.json`)
 
@@ -44,10 +45,10 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 
 - **Numbered job cards** — Each job has a row number for easy reference
 - **Date sections** — Jobs grouped by posted date with date header and dotted line separator (larger font, generous spacing between sections)
-- **Search** — Searches job title, company, and location
+- **Search** — Searches job title, company, and location. Metro area expansion: searching a major city name (e.g., "Los Angeles", "San Francisco", "New York", "Seattle", "Chicago") also matches jobs in surrounding suburbs and satellite cities. 25 metro areas defined with comprehensive suburb lists.
 - **Role filter** — Product Design, UI/UX Design, Visual Design, UX Research, Content Design, Design Engineering, Design Systems, Brand Design, Web Design, Design Leadership
-- **Location filter** — "All locations", "US only", "Remote". US detection uses state abbreviations, state names, US keywords, and a curated list of US city names (including metro area suburbs around NYC, SF Bay Area, LA, Seattle, Chicago, Boston, DC, and other tech hubs)
-- **Date filter** — "Last 90 days" (default), "Today", "Last 7 days", "Last 30 days". Jobs older than 90 days are always excluded
+- **Location filter** — "All locations", "US only", "US in-person" (US jobs excluding remote), "Remote". US detection uses state abbreviations, state names, US keywords, and a curated list of US city names (including metro area suburbs around NYC, SF Bay Area, LA, Seattle, Chicago, Boston, DC, and other tech hubs)
+- **Date filter** — "Last 7 days", "Last 30 days", "Last 90 days" (default). Jobs older than 90 days are always excluded
 - **Save** — Click "Save" on any job to bookmark it. "View saved" button in header shows saved jobs. Persisted in localStorage
 - **Company links** — Company name links to their job board page with a chain-link icon
 - **City column** — Separate fixed-width column on desktop (right-aligned before buttons), wraps under company name on mobile
@@ -59,7 +60,7 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 - White/50 job cards with hover to white/70
 - Dark gray (gray-800) filter inputs and hover states on buttons
 - Buttons: "View" (outline) and "Save" (outline, transparent bg, dark on hover)
-- Centered Jobber logo with "View saved" absolutely positioned to the right
+- Centered Jobber logo with "View saved" absolutely positioned to the right on desktop, stacked below last-scraped text on mobile
 - Full-width 4-column filter grid on desktop, single column on mobile
 - Geist font, AA accessible colors
 - Select chevrons styled white/60 for visibility on dark backgrounds
@@ -70,7 +71,8 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 # Scraper
 cd scraper && pip install -r requirements.txt
 export SERPAPI_KEY="your_key"
-python discover_companies.py   # find companies
+python discover_companies.py   # find companies via SerpAPI
+python expand_companies.py     # bulk expand with curated slugs (no API key needed)
 python scrape_jobs.py          # scrape jobs
 
 # Web

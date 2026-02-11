@@ -71,41 +71,283 @@ const US_KEYWORDS = /\bunited states\b|\busa\b|\bu\.s\.\b/i;
 
 const US_STATE_NAMES = /\b(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|nebraska|nevada|new hampshire|new jersey|new mexico|new york|north carolina|north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|south dakota|tennessee|texas|utah|vermont|virginia|washington|west virginia|wisconsin|wyoming)\b/i;
 
+const METRO_AREAS: Record<string, string[]> = {
+  // --- Big 4 requested metros (comprehensive) ---
+  "new york": [
+    "new york","new york city","nyc","manhattan","brooklyn","queens","bronx",
+    "staten island","harlem","soho","tribeca","chelsea","midtown","fidi",
+    "financial district","flatiron","union square","williamsburg","dumbo",
+    "bushwick","greenpoint","astoria","long island city","flushing",
+    // NJ suburbs
+    "jersey city","hoboken","newark","weehawken","edgewater","fort lee",
+    "secaucus","rutherford","montclair","morristown","princeton","paramus",
+    "hackensack","teaneck","englewood","ridgewood","mahwah","parsippany",
+    // NY suburbs
+    "yonkers","white plains","new rochelle","tarrytown","scarsdale",
+    "mamaroneck","rye","port chester","armonk","purchase","pleasantville",
+    "garden city","great neck","manhasset","roslyn","mineola","hempstead",
+    "long beach","huntington","melville","hauppauge","islandia",
+    // CT suburbs
+    "stamford","greenwich","norwalk","danbury","bridgeport","new haven",
+    "hartford","westport","darien","fairfield",
+  ],
+  "san francisco": [
+    "san francisco","sf","soma","mission district","financial district",
+    // Peninsula
+    "palo alto","menlo park","redwood city","san mateo","foster city",
+    "burlingame","millbrae","san bruno","south san francisco","daly city",
+    "san carlos","belmont","half moon bay","woodside","atherton","portola valley",
+    // South Bay
+    "san jose","santa clara","sunnyvale","cupertino","mountain view",
+    "milpitas","campbell","los gatos","saratoga","gilroy","morgan hill",
+    // East Bay
+    "oakland","berkeley","fremont","hayward","union city","newark",
+    "pleasanton","dublin","livermore","walnut creek","concord",
+    "san ramon","danville","orinda","lafayette","moraga","alameda",
+    "emeryville","richmond","el cerrito","albany","piedmont",
+    // North Bay
+    "san rafael","novato","mill valley","sausalito","tiburon","corte madera",
+    "larkspur","petaluma","napa","sonoma","santa rosa",
+    // Other
+    "santa cruz","scotts valley","capitola",
+  ],
+  "seattle": [
+    "seattle","south lake union","capitol hill","ballard","fremont","wallingford",
+    "queen anne","pioneer square","belltown","university district","columbia city",
+    // Eastside
+    "bellevue","redmond","kirkland","woodinville","bothell","kenmore",
+    "issaquah","sammamish","mercer island","newcastle","factoria",
+    "snoqualmie","north bend","fall city","carnation",
+    // South
+    "renton","kent","tukwila","seatac","auburn","federal way","burien",
+    "des moines","covington","maple valley",
+    // North
+    "shoreline","edmonds","lynnwood","mountlake terrace","everett",
+    "mukilteo","snohomish","marysville","lake stevens",
+    // Tacoma area
+    "tacoma","lakewood","university place","puyallup","sumner","bonney lake",
+    "gig harbor","olympia","lacey","tumwater",
+    // East foothills
+    "north bend","cle elum",
+  ],
+  "chicago": [
+    "chicago","chicagoland","loop","river north","west loop","south loop",
+    "lincoln park","lakeview","wicker park","bucktown","logan square",
+    "hyde park","pilsen","old town","gold coast","streeterville",
+    // North suburbs
+    "evanston","skokie","wilmette","winnetka","glencoe","highland park",
+    "lake forest","deerfield","northbrook","glenview","niles","morton grove",
+    "park ridge","des plaines","arlington heights","mount prospect",
+    "palatine","buffalo grove","libertyville","lake zurich","waukegan",
+    "north chicago","round lake","mundelein","vernon hills","lincolnshire",
+    // West suburbs
+    "oak brook","elmhurst","lombard","glen ellyn","wheaton","naperville",
+    "aurora","lisle","downers grove","westmont","clarendon hills",
+    "hinsdale","western springs","la grange","brookfield","riverside",
+    "oak park","berwyn","cicero","schaumburg","hoffman estates",
+    "streamwood","bartlett","carol stream","hanover park","roselle",
+    "itasca","addison","wood dale","bensenville","elk grove village",
+    // South suburbs
+    "orland park","tinley park","mokena","frankfort","new lenox",
+    "joliet","bolingbrook","romeoville","plainfield","homer glen",
+    "oak lawn","evergreen park","chicago heights","park forest",
+    // NW Indiana (commuter belt)
+    "gary","hammond","east chicago","crown point","valparaiso",
+  ],
+  // --- Other major metros ---
+  "los angeles": [
+    "los angeles","la","santa monica","pasadena","burbank","long beach","irvine",
+    "costa mesa","tustin","aliso viejo","santa ana","glendale","venice",
+    "playa vista","culver city","el segundo","marina del rey","manhattan beach",
+    "hermosa beach","redondo beach","torrance","inglewood","hawthorne",
+    "west hollywood","beverly hills","century city","woodland hills",
+    "sherman oaks","encino","studio city","north hollywood","van nuys",
+    "calabasas","thousand oaks","westlake village","agoura hills",
+    "anaheim","fullerton","huntington beach","newport beach","laguna beach",
+    "lake forest","mission viejo","rancho santa margarita","san clemente",
+    "ontario","pomona","claremont","azusa","monrovia","arcadia","alhambra",
+    "el monte","west covina","whittier","downey","norwalk","cerritos",
+    "lakewood","signal hill","san pedro","carson","compton","paramount",
+    "rancho cucamonga","riverside","corona","fontana","san bernardino",
+    "temecula","murrieta","palm springs","oxnard","ventura","camarillo",
+    "simi valley","santa clarita","palmdale","lancaster",
+  ],
+  "boston": [
+    "boston","cambridge","waltham","somerville","brookline","newton",
+    "quincy","medford","malden","lexington","concord","burlington",
+    "woburn","reading","wakefield","stoneham","melrose","everett",
+    "chelsea","revere","lynn","salem","peabody","danvers","beverly",
+    "gloucester","marblehead","swampscott","nahant","saugus",
+    "needham","wellesley","natick","framingham","marlborough","hudson",
+    "sudbury","wayland","weston","lincoln","bedford","billerica",
+    "lowell","haverhill","andover","north andover","lawrence",
+    "braintree","weymouth","hingham","norwell","scituate","cohasset",
+    "plymouth","kingston","duxbury","marshfield",
+    "dedham","norwood","canton","stoughton","sharon","foxborough",
+    "franklin","milford","hopkinton","westborough","shrewsbury","worcester",
+    // Providence commuter belt
+    "providence","warwick","cranston","pawtucket",
+  ],
+  "washington dc": [
+    "washington","washington dc","dc","capitol hill","georgetown","dupont circle",
+    "foggy bottom","adams morgan","columbia heights","u street","shaw",
+    // Virginia suburbs
+    "arlington","alexandria","reston","mclean","tysons","tysons corner",
+    "fairfax","falls church","herndon","sterling","ashburn","leesburg",
+    "chantilly","centreville","manassas","woodbridge","springfield",
+    "annandale","vienna","burke","lorton","dumfries","stafford",
+    "fredericksburg","richmond",
+    // Maryland suburbs
+    "bethesda","silver spring","rockville","gaithersburg","germantown",
+    "columbia","ellicott city","laurel","bowie","college park",
+    "greenbelt","hyattsville","takoma park","chevy chase","potomac",
+    "olney","clarksburg","frederick","annapolis","baltimore",
+  ],
+  "austin": [
+    "austin","round rock","cedar park","san marcos","georgetown","pflugerville",
+    "leander","dripping springs","bee cave","lakeway","buda","kyle",
+    "manor","hutto","taylor","bastrop","elgin","lockhart",
+    "san antonio","new braunfels","seguin",
+  ],
+  "denver": [
+    "denver","boulder","aurora","lakewood","littleton","broomfield",
+    "fort collins","loveland","longmont","lafayette","louisville","superior",
+    "arvada","westminster","thornton","northglenn","brighton","commerce city",
+    "golden","morrison","evergreen","conifer","castle rock","parker",
+    "highlands ranch","centennial","greenwood village","englewood",
+    "cherry hills village","lone tree","colorado springs",
+  ],
+  "atlanta": [
+    "atlanta","decatur","marietta","roswell","alpharetta","sandy springs",
+    "kennesaw","smyrna","vinings","brookhaven","dunwoody","peachtree city",
+    "johns creek","duluth","suwanee","buford","lawrenceville","norcross",
+    "tucker","stone mountain","lithonia","conyers","covington",
+    "woodstock","canton","cumming","gainesville",
+  ],
+  "dallas": [
+    "dallas","fort worth","plano","frisco","irving","arlington","richardson",
+    "mckinney","allen","prosper","celina","little elm","lewisville",
+    "carrollton","farmers branch","addison","garland","mesquite","rowlett",
+    "rockwall","wylie","sachse","murphy","lucas","princeton",
+    "denton","flower mound","highland village","coppell","grapevine",
+    "colleyville","southlake","keller","north richland hills","hurst",
+    "euless","bedford","mansfield","grand prairie","cedar hill","desoto",
+    "duncanville","lancaster","waxahachie","midlothian","cleburne",
+  ],
+  "houston": [
+    "houston","the woodlands","sugar land","katy","pearland","clear lake",
+    "pasadena","league city","friendswood","webster","nassau bay",
+    "missouri city","stafford","richmond","rosenberg","cypress","tomball",
+    "spring","humble","kingwood","atascocita","baytown","la porte",
+    "deer park","channelview","galveston","texas city","dickinson",
+    "conroe","huntsville","college station","bryan",
+  ],
+  "miami": [
+    "miami","fort lauderdale","boca raton","coral gables","doral","hialeah",
+    "hollywood","miami beach","south beach","north miami","aventura",
+    "sunny isles","hallandale","pembroke pines","miramar","weston",
+    "plantation","davie","sunrise","lauderhill","tamarac","coral springs",
+    "coconut creek","pompano beach","deerfield beach","delray beach",
+    "boynton beach","west palm beach","palm beach gardens","jupiter",
+    "stuart","port st lucie","homestead","key biscayne","key west",
+    "kendall","pinecrest","palmetto bay","cutler bay",
+  ],
+  "portland": [
+    "portland","beaverton","hillsboro","lake oswego","tigard","tualatin",
+    "wilsonville","sherwood","west linn","oregon city","milwaukie",
+    "clackamas","gresham","troutdale","wood village","fairview",
+    "happy valley","damascus","camas","vancouver","washougal",
+    "battle ground","ridgefield","salmon creek",
+  ],
+  "minneapolis": [
+    "minneapolis","saint paul","st paul","bloomington","eden prairie",
+    "plymouth","minnetonka","wayzata","edina","richfield","st louis park",
+    "golden valley","brooklyn park","maple grove","rogers","elk river",
+    "burnsville","eagan","apple valley","lakeville","prior lake",
+    "savage","shakopee","chanhassen","chaska","woodbury","cottage grove",
+    "stillwater","roseville","arden hills","shoreview","maplewood",
+    "white bear lake","fridley","columbia heights","duluth",
+  ],
+  "raleigh": [
+    "raleigh","durham","chapel hill","cary","research triangle","morrisville",
+    "apex","holly springs","fuquay-varina","wake forest","garner",
+    "knightdale","wendell","zebulon","clayton","smithfield","sanford",
+    "pittsboro","hillsborough","mebane","burlington","graham",
+    "greensboro","winston-salem","high point","charlotte",
+  ],
+  "detroit": [
+    "detroit","ann arbor","dearborn","troy","southfield","royal oak",
+    "birmingham","bloomfield hills","farmington hills","novi","livonia",
+    "plymouth","canton","westland","ypsilanti","saline","chelsea",
+    "brighton","howell","pontiac","auburn hills","rochester hills",
+    "sterling heights","warren","macomb","shelby township","clinton township",
+    "st clair shores","grosse pointe","wyandotte","downriver",
+  ],
+  "philadelphia": [
+    "philadelphia","king of prussia","conshohocken","wayne","malvern",
+    "cherry hill","haddonfield","moorestown","mount laurel","marlton",
+    "ardmore","bryn mawr","villanova","radnor","devon","paoli","exton",
+    "west chester","downingtown","coatesville","norristown","blue bell",
+    "fort washington","ambler","lansdale","doylestown","newtown",
+    "yardley","morrisville","bensalem","levittown","media","springfield",
+    "swarthmore","havertown","drexel hill","upper darby",
+    "wilmington","newark","bear","middletown","dover",
+    "trenton","princeton","lawrenceville","hamilton",
+  ],
+  "san diego": [
+    "san diego","la jolla","carlsbad","encinitas","del mar","chula vista",
+    "solana beach","oceanside","vista","escondido","san marcos","poway",
+    "rancho bernardo","scripps ranch","mira mesa","kearny mesa","mission valley",
+    "hillcrest","north park","south park","golden hill","barrio logan",
+    "coronado","imperial beach","national city","el cajon","la mesa",
+    "santee","ramona","fallbrook","temecula","murrieta",
+  ],
+  "phoenix": [
+    "phoenix","scottsdale","tempe","mesa","chandler","gilbert",
+    "glendale","peoria","surprise","goodyear","avondale","buckeye",
+    "queen creek","san tan valley","fountain hills","cave creek",
+    "carefree","paradise valley","anthem","sun city","sun city west",
+    "litchfield park","tolleson","laveen","ahwatukee",
+    "flagstaff","sedona","prescott","tucson",
+  ],
+  "pittsburgh": [
+    "pittsburgh","carnegie","cranberry township","wexford","sewickley",
+    "moon township","robinson","bridgeville","south hills","mount lebanon",
+    "bethel park","upper st clair","peters township","canonsburg",
+    "washington","monroeville","murrysville","irwin","greensburg",
+    "latrobe","butler","beaver","aliquippa",
+  ],
+  "salt lake city": [
+    "salt lake city","provo","lehi","draper","park city","orem",
+    "sandy","murray","midvale","west jordan","south jordan","riverton",
+    "herriman","taylorsville","west valley city","magna","kearns",
+    "bountiful","centerville","farmington","layton","kaysville","ogden",
+    "pleasant grove","american fork","lindon","springville","spanish fork",
+    "payson","nephi","heber city","midway",
+  ],
+  "nashville": [
+    "nashville","franklin","brentwood","murfreesboro","smyrna","la vergne",
+    "hendersonville","gallatin","mount juliet","lebanon","hermitage",
+    "antioch","bellevue","goodlettsville","madison","spring hill",
+    "thompson's station","nolensville","columbia","clarksville",
+  ],
+};
+
+// Build a reverse lookup: city name → list of metro area names it belongs to
+const CITY_TO_METROS: Record<string, string[]> = {};
+for (const [metro, cities] of Object.entries(METRO_AREAS)) {
+  for (const city of cities) {
+    if (!CITY_TO_METROS[city]) CITY_TO_METROS[city] = [];
+    CITY_TO_METROS[city].push(metro);
+  }
+}
+
+// Flat set of all US cities for isUSLocation detection
 const US_CITIES = new Set([
-  // NYC metro
-  "new york","new york city","nyc","brooklyn","jersey city","hoboken",
-  "stamford","white plains","newark",
-  // SF Bay Area
-  "san francisco","palo alto","mountain view","san jose","santa clara",
-  "sunnyvale","cupertino","redwood city","menlo park","foster city",
-  "oakland","berkeley","fremont","san mateo","santa cruz",
-  // LA metro
-  "los angeles","santa monica","pasadena","burbank","long beach","irvine",
-  "costa mesa","tustin","aliso viejo","santa ana","glendale","venice",
-  "playa vista","culver city","el segundo","marina del rey","manhattan beach",
-  "hermosa beach","redondo beach","torrance","inglewood","hawthorne",
-  "west hollywood","beverly hills","century city","woodland hills",
-  "sherman oaks","encino","studio city","north hollywood","van nuys",
-  "calabasas","thousand oaks","westlake village","agoura hills",
-  "anaheim","fullerton","huntington beach","newport beach","laguna beach",
-  "lake forest","mission viejo","rancho santa margarita","san clemente",
-  "ontario","pomona","claremont","azusa","monrovia","arcadia","alhambra",
-  "el monte","west covina","whittier","downey","norwalk","cerritos",
-  "lakewood","signal hill","san pedro","carson","compton","paramount",
-  // Seattle metro
-  "seattle","bellevue","redmond","kirkland","tacoma","woodinville",
-  // Chicago metro
-  "chicago","chicagoland","evanston","naperville","schaumburg",
-  // Boston metro
-  "boston","cambridge","waltham","somerville",
-  // DC metro
-  "washington","arlington","reston","bethesda","alexandria",
-  // Other tech hubs
-  "austin","denver","boulder","atlanta","dallas","houston","miami",
-  "nashville","charlotte","raleigh","durham","minneapolis","pittsburgh",
-  "portland","phoenix","san diego","salt lake city","detroit","ann arbor",
-  "philadelphia","cleveland","south burlington","sacramento","harrisburg",
-  "las vegas","redlands","akron","cary","rogers",
+  ...Object.values(METRO_AREAS).flat(),
+  // Additional cities not in a metro group
+  "nashville","charlotte","cleveland","south burlington","sacramento",
+  "harrisburg","las vegas","redlands","akron","rogers",
 ]);
 
 function isUSLocation(location: string): boolean {
@@ -191,17 +433,30 @@ export default function Home() {
         return false;
       }
 
-      const matchesSearch =
-        !search ||
-        job.title.toLowerCase().includes(search.toLowerCase()) ||
-        job.company.toLowerCase().includes(search.toLowerCase()) ||
-        job.location.toLowerCase().includes(search.toLowerCase());
+      const q = search.toLowerCase();
+      let matchesSearch = !search ||
+        job.title.toLowerCase().includes(q) ||
+        job.company.toLowerCase().includes(q) ||
+        job.location.toLowerCase().includes(q);
+      // Metro area expansion: if search matches a metro name, also match its cities
+      if (!matchesSearch && search) {
+        const jobCity = job.city.toLowerCase();
+        for (const [metro, cities] of Object.entries(METRO_AREAS)) {
+          if (metro.includes(q) || q.includes(metro)) {
+            if (cities.some((c) => jobCity.includes(c) || c.includes(jobCity))) {
+              matchesSearch = true;
+              break;
+            }
+          }
+        }
+      }
       const matchesRole =
         roleType === "all" || job.roleType === roleType;
       const matchesLocation =
         location === "all" ||
         (location === "remote" && job.remote) ||
-        (location === "us" && isUSLocation(job.location));
+        (location === "us" && isUSLocation(job.location)) ||
+        (location === "us_inperson" && isUSLocation(job.location) && !job.remote);
       return matchesSearch && matchesRole && matchesLocation;
     });
   }, [search, roleType, location, dateFilter, showArchived, archived]);
@@ -244,7 +499,7 @@ export default function Home() {
           <Button
             variant="outline"
             size="sm"
-            className="absolute right-4 sm:right-6 top-8 bg-white/50 border-white/50 hover:bg-gray-800 hover:text-white"
+            className="mt-3 sm:mt-0 sm:absolute sm:right-6 sm:top-8 bg-white/50 border-white/50 hover:bg-gray-800 hover:text-white"
             onClick={() => setShowArchived(!showArchived)}
           >
             {showArchived
@@ -283,6 +538,7 @@ export default function Home() {
             <SelectContent>
               <SelectItem value="all">All locations</SelectItem>
               <SelectItem value="us">US only</SelectItem>
+              <SelectItem value="us_inperson">US in-person</SelectItem>
               <SelectItem value="remote">Remote</SelectItem>
             </SelectContent>
           </Select>
@@ -291,10 +547,9 @@ export default function Home() {
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Last 90 days</SelectItem>
-              <SelectItem value="1">Today</SelectItem>
               <SelectItem value="7">Last 7 days</SelectItem>
               <SelectItem value="30">Last 30 days</SelectItem>
+              <SelectItem value="all">Last 90 days</SelectItem>
             </SelectContent>
           </Select>
         </div>
