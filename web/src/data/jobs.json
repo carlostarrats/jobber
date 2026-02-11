@@ -1,0 +1,134 @@
+[
+  {
+    "id": "gh-figma-12345",
+    "title": "Senior Product Designer",
+    "company": "figma",
+    "location": "San Francisco, CA",
+    "remote": false,
+    "url": "https://boards.greenhouse.io/figma/jobs/12345",
+    "platform": "greenhouse",
+    "posted": "2026-02-10",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "gh-stripe-67890",
+    "title": "Product Designer, Payments",
+    "company": "stripe",
+    "location": "San Francisco, CA or Remote",
+    "remote": true,
+    "url": "https://boards.greenhouse.io/stripe/jobs/67890",
+    "platform": "greenhouse",
+    "posted": "2026-02-09",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "lv-notion-abc123",
+    "title": "Staff Product Designer",
+    "company": "notion",
+    "location": "New York, NY",
+    "remote": false,
+    "url": "https://jobs.lever.co/notion/abc123",
+    "platform": "lever",
+    "posted": "2026-02-08",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "ab-linear-def456",
+    "title": "Product Designer",
+    "company": "linear",
+    "location": "Remote (US)",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/linear/def456",
+    "platform": "ashby",
+    "posted": "2026-02-07",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "gh-airbnb-11111",
+    "title": "Design Lead, Search",
+    "company": "airbnb",
+    "location": "San Francisco, CA",
+    "remote": false,
+    "url": "https://boards.greenhouse.io/airbnb/jobs/11111",
+    "platform": "greenhouse",
+    "posted": "2026-02-06",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "lv-vercel-22222",
+    "title": "UX Designer",
+    "company": "vercel",
+    "location": "Remote",
+    "remote": true,
+    "url": "https://jobs.lever.co/vercel/22222",
+    "platform": "lever",
+    "posted": "2026-02-05",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "gh-coinbase-33333",
+    "title": "Senior UX Researcher",
+    "company": "coinbase",
+    "location": "Remote",
+    "remote": true,
+    "url": "https://boards.greenhouse.io/coinbase/jobs/33333",
+    "platform": "greenhouse",
+    "posted": "2026-02-04",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "ab-ramp-44444",
+    "title": "Product Designer, Growth",
+    "company": "ramp",
+    "location": "New York, NY",
+    "remote": false,
+    "url": "https://jobs.ashbyhq.com/ramp/44444",
+    "platform": "ashby",
+    "posted": "2026-02-03",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "lv-spotify-55555",
+    "title": "Design Director",
+    "company": "spotify",
+    "location": "Stockholm, Sweden",
+    "remote": false,
+    "url": "https://jobs.lever.co/spotify/55555",
+    "platform": "lever",
+    "posted": "2026-02-02",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "gh-discord-66666",
+    "title": "Visual Designer",
+    "company": "discord",
+    "location": "San Francisco, CA or Remote",
+    "remote": true,
+    "url": "https://boards.greenhouse.io/discord/jobs/66666",
+    "platform": "greenhouse",
+    "posted": "2026-02-01",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "ab-openai-77777",
+    "title": "Interaction Designer",
+    "company": "openai",
+    "location": "San Francisco, CA",
+    "remote": false,
+    "url": "https://jobs.ashbyhq.com/openai/77777",
+    "platform": "ashby",
+    "posted": "2026-01-30",
+    "scraped": "2026-02-11"
+  },
+  {
+    "id": "gh-plaid-88888",
+    "title": "Content Designer",
+    "company": "plaid",
+    "location": "Remote (US)",
+    "remote": true,
+    "url": "https://boards.greenhouse.io/plaid/jobs/88888",
+    "platform": "greenhouse",
+    "posted": "2026-01-28",
+    "scraped": "2026-02-11"
+  }
+]
