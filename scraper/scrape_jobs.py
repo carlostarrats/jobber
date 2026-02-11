@@ -86,10 +86,14 @@ def extract_city(location):
     """Extract city name from location string."""
     if not location or location == "Unknown":
         return ""
-    # Remove common suffixes and clean up
-    city = location.split(",")[0].strip()
+    # Remove parenthetical suffixes like (Hybrid), (HQ), etc.
+    city = re.sub(r"\s*\(.*?\)?\s*$", "", location).strip()
+    # Take first part before comma
+    city = city.split(",")[0].strip()
     # Remove "Remote - " or "Remote (" prefixes
     city = re.sub(r"^Remote\s*[-/(]\s*", "", city, flags=re.IGNORECASE)
+    # Remove any remaining parentheses
+    city = city.strip("() ").strip()
     # If the whole thing is just "Remote", return empty
     if city.lower().strip() in ("remote", "anywhere", "worldwide", "global"):
         return ""
@@ -97,23 +101,12 @@ def extract_city(location):
 
 
 def get_greenhouse_company_url(slug):
-    """Fetch company website from Greenhouse board info endpoint."""
+    """Return Greenhouse job board URL for the company."""
     if slug in _company_url_cache:
         return _company_url_cache[slug]
-    try:
-        resp = SESSION.get(
-            f"https://boards-api.greenhouse.io/v1/boards/{slug}",
-            timeout=10,
-        )
-        if resp.status_code == 200:
-            data = resp.json()
-            url = data.get("company_url", "")
-            _company_url_cache[slug] = url
-            return url
-    except Exception:
-        pass
-    _company_url_cache[slug] = ""
-    return ""
+    url = f"https://boards.greenhouse.io/{slug}"
+    _company_url_cache[slug] = url
+    return url
 
 
 def get_lever_company_url(slug):
