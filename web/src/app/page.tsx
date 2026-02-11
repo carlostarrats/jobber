@@ -420,7 +420,8 @@ export default function Home() {
 
   const filtered = useMemo(() => {
     const now = new Date();
-    const maxDays = dateFilter === "1" ? 1 : dateFilter === "7" ? 7 : dateFilter === "30" ? 30 : 90;
+    now.setHours(0, 0, 0, 0);
+    const maxDays = dateFilter === "7" ? 7 : dateFilter === "30" ? 30 : 90;
     return allJobs.filter((job) => {
       const isArchived = archived.has(job.id);
       if (showArchived && !isArchived) return false;
@@ -440,15 +441,13 @@ export default function Home() {
         job.title.toLowerCase().includes(q) ||
         job.company.toLowerCase().includes(q) ||
         job.location.toLowerCase().includes(q);
-      // Metro area expansion: if search matches a metro name, also match its cities
+      // Metro area expansion: if search query is exactly a metro name, also match its cities
       if (!matchesSearch && search) {
         const jobCity = job.city.toLowerCase();
-        for (const [metro, cities] of Object.entries(METRO_AREAS)) {
-          if (metro.includes(q) || q.includes(metro)) {
-            if (cities.some((c) => jobCity.includes(c) || c.includes(jobCity))) {
-              matchesSearch = true;
-              break;
-            }
+        if (jobCity) {
+          const metro = METRO_AREAS[q];
+          if (metro && metro.some((c) => c === jobCity)) {
+            matchesSearch = true;
           }
         }
       }
@@ -550,13 +549,14 @@ export default function Home() {
         {/* Filters */}
         <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
           <Input
+            aria-label="Search jobs, companies, and locations"
             placeholder="Search jobs, companies, locations..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             className="bg-gray-800 text-white placeholder:text-gray-400 border-gray-700"
           />
           <Select value={roleType} onValueChange={setRoleType}>
-            <SelectTrigger className="w-full bg-gray-800 text-white border-gray-700">
+            <SelectTrigger aria-label="Filter by role" className="w-full bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -569,7 +569,7 @@ export default function Home() {
             </SelectContent>
           </Select>
           <Select value={location} onValueChange={setLocation}>
-            <SelectTrigger className="w-full bg-gray-800 text-white border-gray-700">
+            <SelectTrigger aria-label="Filter by location" className="w-full bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -580,7 +580,7 @@ export default function Home() {
             </SelectContent>
           </Select>
           <Select value={dateFilter} onValueChange={setDateFilter}>
-            <SelectTrigger className="w-full bg-gray-800 text-white border-gray-700">
+            <SelectTrigger aria-label="Filter by date range" className="w-full bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -590,7 +590,7 @@ export default function Home() {
             </SelectContent>
           </Select>
           <Select value={groupBy} onValueChange={(v) => { setGroupBy(v as "date" | "company"); setLetterFilter(null); }}>
-            <SelectTrigger className="w-full bg-gray-800 text-white border-gray-700">
+            <SelectTrigger aria-label="Group jobs by" className="w-full bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
@@ -618,7 +618,8 @@ export default function Home() {
               return (
                 <button
                   key={letter}
-                  onClick={() => hasCompanies && setLetterFilter(letterFilter === letter ? null : letter)}
+                  disabled={!hasCompanies}
+                  onClick={() => setLetterFilter(letterFilter === letter ? null : letter)}
                   className={`px-2 py-1 text-sm rounded-sm transition-colors ${
                     letterFilter === letter
                       ? "bg-gray-800 text-white"
@@ -707,15 +708,11 @@ export default function Home() {
                           {job.city}
                         </span>
                         <div className="flex shrink-0 items-center gap-2">
-                          <a
-                            href={job.url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <Button variant="outline" size="sm" className="hover:bg-gray-800 hover:text-white">
+                          <Button variant="outline" size="sm" asChild className="hover:bg-gray-800 hover:text-white">
+                            <a href={job.url} target="_blank" rel="noopener noreferrer">
                               View
-                            </Button>
-                          </a>
+                            </a>
+                          </Button>
                           <Button
                             variant="outline"
                             size="sm"
