@@ -383,6 +383,7 @@ export default function Home() {
   const [roleType, setRoleType] = useState("all");
   const [location, setLocation] = useState("all");
   const [dateFilter, setDateFilter] = useState("all");
+  const [groupBy, setGroupBy] = useState<"date" | "company">("date");
   const [showArchived, setShowArchived] = useState(false);
   const [archived, setArchived] = useState<Set<string>>(new Set());
 
@@ -466,19 +467,38 @@ export default function Home() {
     [archived]
   );
 
-  const groupedByDate = useMemo(() => {
-    const groups: { date: string; jobs: Job[] }[] = [];
-    let current: { date: string; jobs: Job[] } | null = null;
+  const grouped = useMemo(() => {
+    if (groupBy === "company") {
+      const map = new Map<string, Job[]>();
+      for (const job of filtered) {
+        const key = job.company;
+        if (!map.has(key)) map.set(key, []);
+        map.get(key)!.push(job);
+      }
+      return Array.from(map.entries())
+        .sort((a, b) => formatCompany(a[0]).localeCompare(formatCompany(b[0])))
+        .map(([company, jobs]) => ({
+          label: formatCompany(company),
+          key: company,
+          jobs,
+        }));
+    }
+    const groups: { label: string; key: string; jobs: Job[] }[] = [];
+    let current: { label: string; key: string; jobs: Job[] } | null = null;
     for (const job of filtered) {
       const date = job.posted || "Unknown";
-      if (!current || current.date !== date) {
-        current = { date, jobs: [] };
+      if (!current || current.key !== date) {
+        current = {
+          label: date === "Unknown" ? "Unknown date" : formatDate(date),
+          key: date,
+          jobs: [],
+        };
         groups.push(current);
       }
       current.jobs.push(job);
     }
     return groups;
-  }, [filtered]);
+  }, [filtered, groupBy]);
 
   return (
     <div className="min-h-screen">
@@ -511,7 +531,7 @@ export default function Home() {
 
       <main className="mx-auto max-w-5xl px-4 pt-0 pb-6 sm:px-6">
         {/* Filters */}
-        <div className="grid grid-cols-1 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
           <Input
             placeholder="Search jobs, companies, locations..."
             value={search}
@@ -552,6 +572,15 @@ export default function Home() {
               <SelectItem value="all">Last 90 days</SelectItem>
             </SelectContent>
           </Select>
+          <Select value={groupBy} onValueChange={(v) => setGroupBy(v as "date" | "company")}>
+            <SelectTrigger className="w-full bg-gray-800 text-white border-gray-700">
+              <SelectValue />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="date">By date</SelectItem>
+              <SelectItem value="company">By company</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
 
         {/* Job list */}
@@ -565,11 +594,14 @@ export default function Home() {
           )}
           {(() => {
             let counter = 0;
-            return groupedByDate.map((group) => (
-              <div key={group.date} className="mt-16 first:mt-0">
+            return grouped.map((group) => (
+              <div key={group.key} className="mt-16 first:mt-0">
                 <div className="flex items-center gap-3 pb-3">
                   <span className="text-lg font-semibold text-muted-foreground">
-                    {group.date === "Unknown" ? "Unknown date" : formatDate(group.date)}
+                    {group.label}
+                    {groupBy === "company" && (
+                      <span className="ml-2 text-sm font-normal">({group.jobs.length})</span>
+                    )}
                   </span>
                   <div className="flex-1 border-b border-dashed border-muted-foreground/30" />
                 </div>
