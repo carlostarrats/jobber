@@ -384,6 +384,7 @@ export default function Home() {
   const [location, setLocation] = useState("all");
   const [dateFilter, setDateFilter] = useState("all");
   const [groupBy, setGroupBy] = useState<"date" | "company">("date");
+  const [letterFilter, setLetterFilter] = useState<string | null>(null);
   const [showArchived, setShowArchived] = useState(false);
   const [archived, setArchived] = useState<Set<string>>(new Set());
 
@@ -467,6 +468,17 @@ export default function Home() {
     [archived]
   );
 
+  // Letters that have companies (for the alphabet bar)
+  const availableLetters = useMemo(() => {
+    if (groupBy !== "company") return new Set<string>();
+    const letters = new Set<string>();
+    for (const job of filtered) {
+      const first = formatCompany(job.company).charAt(0).toUpperCase();
+      if (first) letters.add(first);
+    }
+    return letters;
+  }, [filtered, groupBy]);
+
   const grouped = useMemo(() => {
     if (groupBy === "company") {
       const map = new Map<string, Job[]>();
@@ -475,13 +487,18 @@ export default function Home() {
         if (!map.has(key)) map.set(key, []);
         map.get(key)!.push(job);
       }
-      return Array.from(map.entries())
-        .sort((a, b) => formatCompany(a[0]).localeCompare(formatCompany(b[0])))
-        .map(([company, jobs]) => ({
-          label: formatCompany(company),
-          key: company,
-          jobs,
-        }));
+      let entries = Array.from(map.entries())
+        .sort((a, b) => formatCompany(a[0]).localeCompare(formatCompany(b[0])));
+      if (letterFilter) {
+        entries = entries.filter(([company]) =>
+          formatCompany(company).charAt(0).toUpperCase() === letterFilter
+        );
+      }
+      return entries.map(([company, jobs]) => ({
+        label: formatCompany(company),
+        key: company,
+        jobs,
+      }));
     }
     const groups: { label: string; key: string; jobs: Job[] }[] = [];
     let current: { label: string; key: string; jobs: Job[] } | null = null;
@@ -498,7 +515,7 @@ export default function Home() {
       current.jobs.push(job);
     }
     return groups;
-  }, [filtered, groupBy]);
+  }, [filtered, groupBy, letterFilter]);
 
   return (
     <div className="min-h-screen">
@@ -572,7 +589,7 @@ export default function Home() {
               <SelectItem value="all">Last 90 days</SelectItem>
             </SelectContent>
           </Select>
-          <Select value={groupBy} onValueChange={(v) => setGroupBy(v as "date" | "company")}>
+          <Select value={groupBy} onValueChange={(v) => { setGroupBy(v as "date" | "company"); setLetterFilter(null); }}>
             <SelectTrigger className="w-full bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
@@ -582,6 +599,40 @@ export default function Home() {
             </SelectContent>
           </Select>
         </div>
+
+        {/* Alphabet bar */}
+        {groupBy === "company" && (
+          <div className="mt-4 flex flex-wrap gap-1 justify-center">
+            <button
+              onClick={() => setLetterFilter(null)}
+              className={`px-2 py-1 text-sm rounded-sm transition-colors ${
+                letterFilter === null
+                  ? "bg-gray-800 text-white"
+                  : "text-muted-foreground hover:bg-gray-800 hover:text-white"
+              }`}
+            >
+              All
+            </button>
+            {"ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => {
+              const hasCompanies = availableLetters.has(letter);
+              return (
+                <button
+                  key={letter}
+                  onClick={() => hasCompanies && setLetterFilter(letterFilter === letter ? null : letter)}
+                  className={`px-2 py-1 text-sm rounded-sm transition-colors ${
+                    letterFilter === letter
+                      ? "bg-gray-800 text-white"
+                      : hasCompanies
+                        ? "text-muted-foreground hover:bg-gray-800 hover:text-white"
+                        : "text-muted-foreground/30 cursor-default"
+                  }`}
+                >
+                  {letter}
+                </button>
+              );
+            })}
+          </div>
+        )}
 
         {/* Job list */}
         <div className="mt-6">
@@ -600,7 +651,7 @@ export default function Home() {
                   <span className="text-lg font-semibold text-muted-foreground">
                     {group.label}
                     {groupBy === "company" && (
-                      <span className="ml-2 text-sm font-normal">({group.jobs.length})</span>
+                      <>{" "}<span className="text-muted-foreground/50">({group.jobs.length})</span></>
                     )}
                   </span>
                   <div className="flex-1 border-b border-dashed border-muted-foreground/30" />
