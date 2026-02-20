@@ -30,6 +30,14 @@ SEARCH_TITLES = [
     "interaction designer",
     "visual designer",
     "UI designer",
+    "experience designer",
+    "design director",
+    "design manager",
+    "UX researcher",
+    "design engineer",
+    "content designer",
+    "design systems",
+    "user experience designer",
 ]
 
 PLATFORMS = {

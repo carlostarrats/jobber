@@ -21,46 +21,45 @@ import requests
 COMPANIES_FILE = Path(__file__).parent / "companies.json"
 JOBS_FILE = Path(__file__).parent / "jobs.json"
 
-# Titles to match (case-insensitive). Add or remove as needed.
-TITLE_PATTERNS = [
-    r"product designer",
-    r"ux designer",
-    r"ui designer",
-    r"visual designer",
-    r"interaction designer",
-    r"design lead",
-    r"design director",
-    r"head of design",
-    r"staff designer",
-    r"senior designer",
-    r"principal designer",
-    r"design manager",
-    r"brand designer",
-    r"graphic designer",
-    r"web designer",
-    r"design engineer",
-    r"ux researcher",
-    r"content designer",
-    r"design systems",
-]
+# Broad include: anything with design/designer/ux/user experience in the title
+TITLE_INCLUDE = re.compile(
+    r"\bdesign"          # designer, design lead, design systems, etc.
+    r"|\bux\b"           # UX researcher, UX lead, etc.
+    r"|user.experience"  # User Experience, User-Experience
+    r"|\binterface\b"    # Interface Designer
+    r"|\binteraction\b"  # Interaction Designer
+    , re.IGNORECASE)
 
-TITLE_REGEX = re.compile("|".join(TITLE_PATTERNS), re.IGNORECASE)
+# Exclude non-design roles that happen to contain design keywords
+TITLE_EXCLUDE = re.compile(
+    r"recruit"              # Design Recruiter, Technical Recruiter
+    r"|program.manager"     # Design Program Manager
+    r"|\bproduct.manag"     # Product Manager, Design Tools
+    r"|software.engineer"   # Software Engineering - Interaction Design
+    r"|compensation"        # Head of Compensation Design
+    r"|instructional"       # Instructional Designer
+    r"|\bsales\b"           # Sales roles
+    r"|\baudit"             # Auditor roles
+    r"|\bcompliance\b"      # Compliance roles
+    , re.IGNORECASE)
 
-# Role type categorization based on title keywords
+# Role type categorization based on title keywords (order matters — first match wins)
 ROLE_CATEGORIES = [
     (r"ux research", "ux_research"),
     (r"content design", "content_design"),
-    (r"design engineer", "design_engineering"),
+    (r"design engineer|design technologist", "design_engineering"),
     (r"design systems", "design_systems"),
     (r"brand design", "brand_design"),
     (r"graphic design", "brand_design"),
     (r"visual design", "visual_design"),
     (r"web design", "web_design"),
-    (r"ui design", "ui_design"),
+    (r"ui.?(/|\\|,)?\s*ux|ux.?(/|\\|,)?\s*ui|ui design|\bui\b.*designer", "ui_design"),
     (r"interaction design", "product_design"),
+    (r"experience design", "product_design"),
     (r"product design", "product_design"),
-    (r"design director|design lead|head of design|design manager", "design_leadership"),
+    (r"design director|design lead|head of design|design manager|director.*design|vp.*design", "design_leadership"),
     (r"staff designer|senior designer|principal designer", "product_design"),
+    (r"\bdesigner\b", "product_design"),
 ]
 
 SESSION = requests.Session()
@@ -71,7 +70,7 @@ _company_url_cache = {}
 
 
 def is_design_role(title):
-    return bool(TITLE_REGEX.search(title))
+    return bool(TITLE_INCLUDE.search(title)) and not bool(TITLE_EXCLUDE.search(title))
 
 
 def categorize_role(title):
