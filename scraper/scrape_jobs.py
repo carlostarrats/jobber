@@ -32,15 +32,22 @@ TITLE_INCLUDE = re.compile(
 
 # Exclude non-design roles that happen to contain design keywords
 TITLE_EXCLUDE = re.compile(
-    r"recruit"              # Design Recruiter, Technical Recruiter
+    r"\bengineer"           # Mechanical/Electrical/Hardware Design Engineer
+    r"|\btechnician"        # Design Technician, etc.
+    r"|recruit"             # Design Recruiter, Technical Recruiter
     r"|program.manager"     # Design Program Manager
     r"|\bproduct.manag"     # Product Manager, Design Tools
-    r"|software.engineer"   # Software Engineering - Interaction Design
     r"|compensation"        # Head of Compensation Design
     r"|instructional"       # Instructional Designer
     r"|\bsales\b"           # Sales roles
     r"|\baudit"             # Auditor roles
     r"|\bcompliance\b"      # Compliance roles
+    , re.IGNORECASE)
+
+# Override: titles excluded above but should still be included
+# Only "Design Engineer" as the primary role (not "Mechanical Design Engineer" etc.)
+TITLE_OVERRIDE = re.compile(
+    r"^(?:sr\.?\s+|senior\s+|staff\s+|lead\s+|principal\s+|founding\s+)?(?:ui\s+)?design\s+engineer"
     , re.IGNORECASE)
 
 # Role type categorization based on title keywords (order matters — first match wins)
@@ -70,6 +77,8 @@ _company_url_cache = {}
 
 
 def is_design_role(title):
+    if TITLE_OVERRIDE.search(title):
+        return True
     return bool(TITLE_INCLUDE.search(title)) and not bool(TITLE_EXCLUDE.search(title))
 
 
