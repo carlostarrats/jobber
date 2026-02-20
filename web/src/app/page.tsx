@@ -33,16 +33,24 @@ const allJobs = jobs as Job[];
 
 const ROLE_LABELS: Record<string, string> = {
   product_design: "Product Design",
-  ui_design: "UI/UX Design",
-  visual_design: "Visual Design",
-  ux_research: "UX Research",
-  content_design: "Content Design",
-  design_engineering: "Design Engineering",
-  design_systems: "Design Systems",
   brand_design: "Brand Design",
-  web_design: "Web Design",
   design_leadership: "Design Leadership",
-  other_design: "Other Design",
+  design_engineering: "Design Engineering",
+};
+
+// Map all roleTypes into 4 filter groups
+const ROLE_GROUP: Record<string, string> = {
+  product_design: "product_design",
+  ui_design: "product_design",
+  visual_design: "product_design",
+  web_design: "product_design",
+  ux_research: "product_design",
+  content_design: "product_design",
+  other_design: "product_design",
+  brand_design: "brand_design",
+  design_leadership: "design_leadership",
+  design_engineering: "design_engineering",
+  design_systems: "design_engineering",
 };
 
 function formatDate(dateStr: string) {
@@ -383,10 +391,11 @@ export default function Home() {
   const [roleType, setRoleType] = useState("all");
   const [location, setLocation] = useState("all");
   const [dateFilter, setDateFilter] = useState("all");
-  const [groupBy, setGroupBy] = useState<"date" | "company">("date");
+  const [groupBy, setGroupBy] = useState<"date" | "company" | "date-company">("date");
   const [letterFilter, setLetterFilter] = useState<string | null>(null);
   const [showArchived, setShowArchived] = useState(false);
   const [archived, setArchived] = useState<Set<string>>(new Set());
+  const [expandedCompanies, setExpandedCompanies] = useState<Set<string>>(new Set());
 
   // Load archived from localStorage on mount
   useEffect(() => {
@@ -409,11 +418,14 @@ export default function Home() {
     []
   );
 
-  // Collect unique role types present in data
+  // Collect unique grouped role types present in data
   const roleTypes = useMemo(() => {
     const types = new Set<string>();
     allJobs.forEach((job) => {
-      if (job.roleType) types.add(job.roleType);
+      if (job.roleType) {
+        const group = ROLE_GROUP[job.roleType] || job.roleType;
+        types.add(group);
+      }
     });
     return Array.from(types).sort();
   }, []);
@@ -421,16 +433,16 @@ export default function Home() {
   const filtered = useMemo(() => {
     const now = new Date();
     now.setHours(0, 0, 0, 0);
-    const maxDays = dateFilter === "7" ? 7 : dateFilter === "30" ? 30 : 90;
+    const maxDays = dateFilter === "7" ? 7 : dateFilter === "30" ? 30 : 45;
     return allJobs.filter((job) => {
       const isArchived = archived.has(job.id);
       if (showArchived && !isArchived) return false;
       if (!showArchived && isArchived) return false;
 
-      // Always exclude jobs older than 90 days
+      // Always exclude jobs older than 45 days
       if (job.posted) {
         const daysAgo = (now.getTime() - new Date(job.posted + "T00:00:00").getTime()) / 86400000;
-        if (daysAgo > 90) return false;
+        if (daysAgo > 45) return false;
         if (dateFilter !== "all" && daysAgo > maxDays) return false;
       } else {
         return false;
@@ -451,13 +463,26 @@ export default function Home() {
           }
         }
       }
+      const jobRoleGroup = ROLE_GROUP[job.roleType] || job.roleType;
       const matchesRole =
-        roleType === "all" || job.roleType === roleType;
-      const matchesLocation =
-        location === "all" ||
-        (location === "remote" && job.remote) ||
-        (location === "us" && isUSLocation(job.location)) ||
-        (location === "us_inperson" && isUSLocation(job.location) && !job.remote);
+        roleType === "all" || jobRoleGroup === roleType;
+      let matchesLocation = false;
+      if (location === "all") {
+        matchesLocation = true;
+      } else if (location === "remote") {
+        matchesLocation = job.remote;
+      } else if (location === "us") {
+        matchesLocation = isUSLocation(job.location);
+      } else if (location === "us_inperson") {
+        matchesLocation = isUSLocation(job.location) && !job.remote;
+      } else if (location.startsWith("metro_")) {
+        const metro = location.slice(6);
+        const cities = METRO_AREAS[metro];
+        if (cities) {
+          const jobCity = job.city.toLowerCase();
+          matchesLocation = jobCity ? cities.includes(jobCity) : false;
+        }
+      }
       return matchesSearch && matchesRole && matchesLocation;
     });
   }, [search, roleType, location, dateFilter, showArchived, archived]);
@@ -478,7 +503,9 @@ export default function Home() {
     return letters;
   }, [filtered, groupBy]);
 
-  const grouped = useMemo(() => {
+  type Group = { label: string; key: string; jobs: Job[]; companyUrl?: string; subgroups?: Group[] };
+
+  const grouped = useMemo((): Group[] => {
     if (groupBy === "company") {
       const map = new Map<string, Job[]>();
       for (const job of filtered) {
@@ -496,11 +523,43 @@ export default function Home() {
       return entries.map(([company, jobs]) => ({
         label: formatCompany(company),
         key: company,
+        companyUrl: jobs[0]?.companyUrl,
         jobs,
       }));
     }
-    const groups: { label: string; key: string; jobs: Job[] }[] = [];
-    let current: { label: string; key: string; jobs: Job[] } | null = null;
+    if (groupBy === "date-company") {
+      // Group by date first, then by company within each date
+      const dateMap = new Map<string, Job[]>();
+      for (const job of filtered) {
+        const date = job.posted || "Unknown";
+        if (!dateMap.has(date)) dateMap.set(date, []);
+        dateMap.get(date)!.push(job);
+      }
+      return Array.from(dateMap.entries()).map(([date, dateJobs]) => {
+        const companyMap = new Map<string, Job[]>();
+        for (const job of dateJobs) {
+          if (!companyMap.has(job.company)) companyMap.set(job.company, []);
+          companyMap.get(job.company)!.push(job);
+        }
+        const subgroups = Array.from(companyMap.entries())
+          .sort((a, b) => formatCompany(a[0]).localeCompare(formatCompany(b[0])))
+          .map(([company, jobs]) => ({
+            label: formatCompany(company),
+            key: `${date}-${company}`,
+            companyUrl: jobs[0]?.companyUrl,
+            jobs,
+          }));
+        return {
+          label: date === "Unknown" ? "Unknown date" : formatDate(date),
+          key: date,
+          jobs: dateJobs,
+          subgroups,
+        };
+      });
+    }
+    // Default: group by date
+    const groups: Group[] = [];
+    let current: Group | null = null;
     for (const job of filtered) {
       const date = job.posted || "Unknown";
       if (!current || current.key !== date) {
@@ -577,6 +636,10 @@ export default function Home() {
               <SelectItem value="us">US only</SelectItem>
               <SelectItem value="us_inperson">US in-person</SelectItem>
               <SelectItem value="remote">Remote</SelectItem>
+              <SelectItem value="metro_new york">NYC Metro</SelectItem>
+              <SelectItem value="metro_los angeles">LA Metro</SelectItem>
+              <SelectItem value="metro_seattle">Seattle Metro</SelectItem>
+              <SelectItem value="metro_chicago">Chicago Metro</SelectItem>
             </SelectContent>
           </Select>
           <Select value={dateFilter} onValueChange={setDateFilter}>
@@ -586,16 +649,17 @@ export default function Home() {
             <SelectContent>
               <SelectItem value="7">Last 7 days</SelectItem>
               <SelectItem value="30">Last 30 days</SelectItem>
-              <SelectItem value="all">Last 90 days</SelectItem>
+              <SelectItem value="all">Last 45 days</SelectItem>
             </SelectContent>
           </Select>
-          <Select value={groupBy} onValueChange={(v) => { setGroupBy(v as "date" | "company"); setLetterFilter(null); }}>
+          <Select value={groupBy} onValueChange={(v) => { setGroupBy(v as "date" | "company" | "date-company"); setLetterFilter(null); }}>
             <SelectTrigger aria-label="Group jobs by" className="w-full bg-gray-800 text-white border-gray-700">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="date">By date</SelectItem>
               <SelectItem value="company">By company</SelectItem>
+              <SelectItem value="date-company">By date &amp; company</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -646,86 +710,146 @@ export default function Home() {
           )}
           {(() => {
             let counter = 0;
+
+            function renderJobCard(job: Job) {
+              counter++;
+              const num = counter;
+              return (
+                <div
+                  key={job.id}
+                  className="group flex items-start gap-2 rounded-lg border py-4 pr-4 pl-2 transition-colors bg-white/50 hover:bg-white/70"
+                >
+                  <span className="mt-0.5 text-sm font-medium text-muted-foreground/60 tabular-nums w-8 shrink-0 text-right">
+                    {num}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span className="font-semibold">
+                        {job.title}
+                      </span>
+                    </div>
+                    <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+                      {groupBy !== "company" && groupBy !== "date-company" && (
+                        job.companyUrl ? (
+                          <a
+                            href={job.companyUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 font-medium text-foreground hover:underline"
+                          >
+                            <svg className="size-3.5 shrink-0 text-muted-foreground/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                            </svg>
+                            {formatCompany(job.company)}
+                          </a>
+                        ) : (
+                          <span className="font-medium text-foreground">
+                            {formatCompany(job.company)}
+                          </span>
+                        )
+                      )}
+                      {job.remote && (
+                        <Badge variant="secondary" className="text-xs bg-yellow-200/80 border-yellow-300">
+                          Remote
+                        </Badge>
+                      )}
+                      {job.city && (
+                        <span className="sm:hidden">{job.city}</span>
+                      )}
+                    </div>
+                  </div>
+                  <span className="hidden sm:inline text-sm text-muted-foreground w-40 shrink-0 truncate text-left self-center">
+                    {job.city}
+                  </span>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <Button variant="outline" size="sm" asChild className="hover:bg-gray-800 hover:text-white">
+                      <a href={job.url} target="_blank" rel="noopener noreferrer">
+                        View
+                      </a>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      onClick={() => toggleArchive(job.id)}
+                      className="text-xs bg-transparent hover:bg-gray-800 hover:text-white"
+                    >
+                      {archived.has(job.id) ? "Unsave" : "Save"}
+                    </Button>
+                  </div>
+                </div>
+              );
+            }
+
+            function renderCollapsibleCompany(sub: Group) {
+              const isExpanded = expandedCompanies.has(sub.key);
+              return (
+                <div key={sub.key}>
+                  <button
+                    onClick={() => setExpandedCompanies((prev) => {
+                      const next = new Set(prev);
+                      if (next.has(sub.key)) next.delete(sub.key);
+                      else next.add(sub.key);
+                      return next;
+                    })}
+                    className="w-full flex items-center gap-3 py-2 px-3 rounded-lg hover:bg-white/50 transition-colors cursor-pointer"
+                  >
+                    <svg
+                      className={`size-3.5 shrink-0 text-muted-foreground/50 transition-transform ${isExpanded ? "rotate-90" : ""}`}
+                      viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                    >
+                      <path d="M9 18l6-6-6-6" />
+                    </svg>
+                    <span className="text-sm font-semibold text-foreground">
+                      {sub.label}
+                    </span>
+                    <span className="text-sm text-muted-foreground/50">
+                      {sub.jobs.length} {sub.jobs.length === 1 ? "job" : "jobs"}
+                    </span>
+                    {sub.companyUrl && (
+                      <a
+                        href={sub.companyUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="ml-auto text-muted-foreground/40 hover:text-muted-foreground"
+                      >
+                        <svg className="size-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                        </svg>
+                      </a>
+                    )}
+                  </button>
+                  {isExpanded && (
+                    <div className="space-y-2 mt-1 ml-4">
+                      {sub.jobs.map((job) => renderJobCard(job))}
+                    </div>
+                  )}
+                </div>
+              );
+            }
+
             return grouped.map((group) => (
               <div key={group.key} className="mt-16 first:mt-0">
                 <div className="flex items-center gap-3 pb-3">
                   <span className="text-lg font-semibold text-muted-foreground">
                     {group.label}
-                    {groupBy === "company" && (
+                    {(groupBy === "company") && (
                       <>{" "}<span className="text-muted-foreground/50">({group.jobs.length})</span></>
                     )}
                   </span>
                   <div className="flex-1 border-b border-dashed border-muted-foreground/30" />
                 </div>
-                <div className="space-y-2">
-                  {group.jobs.map((job) => {
-                    counter++;
-                    const num = counter;
-                    return (
-                      <div
-                        key={job.id}
-                        className="group flex items-start gap-2 rounded-lg border py-4 pr-4 pl-2 transition-colors bg-white/50 hover:bg-white/70"
-                      >
-                        <span className="mt-0.5 text-sm font-medium text-muted-foreground/60 tabular-nums w-8 shrink-0 text-right">
-                          {num}
-                        </span>
-                        <div className="min-w-0 flex-1">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span className="font-semibold">
-                              {job.title}
-                            </span>
-                          </div>
-                          <div className="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
-                            {job.companyUrl ? (
-                              <a
-                                href={job.companyUrl}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center gap-1 font-medium text-foreground hover:underline"
-                              >
-                                <svg className="size-3.5 shrink-0 text-muted-foreground/50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-                                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-                                </svg>
-                                {formatCompany(job.company)}
-                              </a>
-                            ) : (
-                              <span className="font-medium text-foreground">
-                                {formatCompany(job.company)}
-                              </span>
-                            )}
-                            {job.remote && (
-                              <Badge variant="secondary" className="text-xs">
-                                Remote
-                              </Badge>
-                            )}
-                            {job.city && (
-                              <span className="sm:hidden">{job.city}</span>
-                            )}
-                          </div>
-                        </div>
-                        <span className="hidden sm:inline text-sm text-muted-foreground w-40 shrink-0 truncate text-left self-center">
-                          {job.city}
-                        </span>
-                        <div className="flex shrink-0 items-center gap-2">
-                          <Button variant="outline" size="sm" asChild className="hover:bg-gray-800 hover:text-white">
-                            <a href={job.url} target="_blank" rel="noopener noreferrer">
-                              View
-                            </a>
-                          </Button>
-                          <Button
-                            variant="outline"
-                            size="sm"
-                            onClick={() => toggleArchive(job.id)}
-                            className="text-xs bg-transparent hover:bg-gray-800 hover:text-white"
-                          >
-                            {archived.has(job.id) ? "Unsave" : "Save"}
-                          </Button>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
+                {groupBy === "date-company" && group.subgroups ? (
+                  <div className="space-y-1">
+                    {group.subgroups.map((sub) => renderCollapsibleCompany(sub))}
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    {group.jobs.map((job) => renderJobCard(job))}
+                  </div>
+                )}
               </div>
             ));
           })()}

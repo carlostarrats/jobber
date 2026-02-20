@@ -1,8 +1,13 @@
 """
-Bulk expand companies.json with curated tech company slugs.
+Bulk expand companies.json from multiple sources:
 
-Embeds ~500 curated company slug guesses across Greenhouse, Lever, and Ashby,
-validates each against the public API, and merges valid ones into companies.json.
+1. Curated tech company slugs (~500)
+2. Y Combinator companies (via yc-oss API — ~1400 hiring)
+3. a16z portfolio companies (scraped from a16z.com)
+4. Community aggregator lists (GitHub repos with 4000+ companies)
+
+Validates each slug against Greenhouse/Lever/Ashby public APIs,
+and merges valid ones into companies.json.
 
 Usage:
   pip install requests
@@ -12,6 +17,7 @@ No API keys needed — all validation endpoints are public.
 """
 
 import json
+import re
 import time
 import threading
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -90,6 +96,98 @@ VALIDATORS = {
     "lever": validate_lever,
     "ashby": validate_ashby,
 }
+
+# --- External source fetchers ---
+
+def fetch_yc_slugs():
+    """Fetch company slugs from Y Combinator's public API (hiring companies)."""
+    print("  Fetching YC companies (hiring)...")
+    try:
+        resp = SESSION.get(
+            "https://yc-oss.github.io/api/companies/hiring.json",
+            timeout=30,
+        )
+        if resp.status_code != 200:
+            print(f"    Failed: HTTP {resp.status_code}")
+            return []
+        companies = resp.json()
+        # YC slugs are lowercase company names, often match ATS slugs
+        slugs = []
+        for c in companies:
+            slug = c.get("slug", "")
+            if slug:
+                slugs.append(slug)
+            # Also try sanitized website domain as slug
+            website = c.get("website", "")
+            if website:
+                domain = re.sub(r"https?://(www\.)?", "", website).split("/")[0].split(".")[0]
+                if domain and domain != slug:
+                    slugs.append(domain)
+        print(f"    Got {len(slugs)} slug candidates from {len(companies)} YC companies")
+        return slugs
+    except Exception as e:
+        print(f"    Error fetching YC data: {e}")
+        return []
+
+
+def fetch_aggregator_slugs():
+    """Fetch company lists from community job board aggregator repos."""
+    base = "https://raw.githubusercontent.com/Feashliaa/job-board-aggregator/main/data"
+    result = {"greenhouse": [], "lever": [], "ashby": []}
+    for platform in result:
+        url = f"{base}/{platform}_companies.json"
+        print(f"  Fetching aggregator {platform} list...")
+        try:
+            resp = SESSION.get(url, timeout=30)
+            if resp.status_code == 200:
+                data = resp.json()
+                if isinstance(data, list):
+                    result[platform] = data
+                elif isinstance(data, dict):
+                    result[platform] = list(data.keys())
+                print(f"    Got {len(result[platform])} {platform} companies")
+            else:
+                print(f"    Failed: HTTP {resp.status_code}")
+        except Exception as e:
+            print(f"    Error: {e}")
+    return result
+
+
+def fetch_a16z_slugs():
+    """Fetch a16z portfolio company names and generate slug candidates."""
+    print("  Fetching a16z portfolio...")
+    try:
+        resp = SESSION.get("https://a16z.com/portfolio/", timeout=30)
+        if resp.status_code != 200:
+            print(f"    Failed: HTTP {resp.status_code}")
+            return []
+        # Extract company names from the portfolio page
+        names = re.findall(r'class="[^"]*portfolio[^"]*"[^>]*>([^<]+)<', resp.text)
+        if not names:
+            # Try alternate patterns
+            names = re.findall(r'"name"\s*:\s*"([^"]+)"', resp.text)
+        if not names:
+            # Try link text patterns
+            names = re.findall(r'href="https://a16z\.com/portfolio/[^"]*"[^>]*>([^<]+)<', resp.text)
+        # Generate slugs from company names
+        slugs = []
+        for name in names:
+            name = name.strip()
+            if not name or len(name) > 50:
+                continue
+            # Generate slug variants
+            slug = re.sub(r"[^a-z0-9]+", "", name.lower())
+            if slug:
+                slugs.append(slug)
+            slug_dash = re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+            if slug_dash and slug_dash != slug:
+                slugs.append(slug_dash)
+        print(f"    Got {len(slugs)} slug candidates from {len(names)} a16z companies")
+        return slugs
+    except Exception as e:
+        print(f"    Error fetching a16z data: {e}")
+        return []
+
 
 # --- Curated slug guesses ---
 # Invalid slugs simply 404 and get filtered out. Include multiple variants
@@ -386,19 +484,39 @@ def run():
 
     existing_sets = {p: set(companies.get(p, [])) for p in CURATED_SLUGS}
 
-    print("=== Expanding companies.json with curated slugs ===\n")
+    print("=== Expanding companies.json ===\n")
     total_before = sum(len(v) for v in companies.values())
     print(f"Current companies: {total_before}")
     for p in CURATED_SLUGS:
         print(f"  {p}: {len(companies.get(p, []))}")
+
+    # --- Fetch external sources ---
+    print("\n--- Fetching external sources ---")
+    yc_slugs = fetch_yc_slugs()
+    a16z_slugs = fetch_a16z_slugs()
+    aggregator = fetch_aggregator_slugs()
+
+    # Merge external slugs into curated lists (all get validated)
+    all_slugs = {}
+    for platform in CURATED_SLUGS:
+        combined = set(CURATED_SLUGS[platform])
+        # YC and a16z slugs: try on all platforms
+        combined.update(yc_slugs)
+        combined.update(a16z_slugs)
+        # Aggregator slugs: platform-specific (already validated by them)
+        combined.update(aggregator.get(platform, []))
+        all_slugs[platform] = list(combined)
+
+    total_candidates = sum(len(v) for v in all_slugs.values())
+    print(f"\nTotal slug candidates to validate: {total_candidates}")
     print()
 
-    # Validate all platforms in parallel (each platform's slugs validated concurrently)
+    # Validate all platforms
     all_new = {}
-    for platform in CURATED_SLUGS:
+    for platform in all_slugs:
         all_new[platform] = validate_slugs(
             platform,
-            CURATED_SLUGS[platform],
+            all_slugs[platform],
             existing_sets[platform],
         )
         print()
