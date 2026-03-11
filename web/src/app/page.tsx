@@ -32,25 +32,8 @@ type Job = {
 const allJobs = jobs as Job[];
 
 const ROLE_LABELS: Record<string, string> = {
-  product_design: "Product Design",
-  brand_design: "Brand Design",
-  design_leadership: "Design Leadership",
-  design_engineering: "Design Engineering",
-};
-
-// Map all roleTypes into 4 filter groups
-const ROLE_GROUP: Record<string, string> = {
-  product_design: "product_design",
-  ui_design: "product_design",
-  visual_design: "product_design",
-  web_design: "product_design",
-  ux_research: "product_design",
-  content_design: "product_design",
-  other_design: "product_design",
-  brand_design: "brand_design",
-  design_leadership: "design_leadership",
-  design_engineering: "design_engineering",
-  design_systems: "design_engineering",
+  product_design: "Product Designer",
+  ux_design: "UX Designer",
 };
 
 function formatDate(dateStr: string) {
@@ -418,14 +401,11 @@ export default function Home() {
     []
   );
 
-  // Collect unique grouped role types present in data
+  // Collect unique role types present in data
   const roleTypes = useMemo(() => {
     const types = new Set<string>();
     allJobs.forEach((job) => {
-      if (job.roleType) {
-        const group = ROLE_GROUP[job.roleType] || job.roleType;
-        types.add(group);
-      }
+      if (job.roleType) types.add(job.roleType);
     });
     return Array.from(types).sort();
   }, []);
@@ -433,7 +413,7 @@ export default function Home() {
   const filtered = useMemo(() => {
     const now = new Date();
     now.setHours(0, 0, 0, 0);
-    const maxDays = dateFilter === "7" ? 7 : dateFilter === "30" ? 30 : 45;
+    const maxDays = dateFilter === "7" ? 7 : 30;
     return allJobs.filter((job) => {
       const isArchived = archived.has(job.id);
       if (showArchived && !isArchived) return false;
@@ -442,7 +422,7 @@ export default function Home() {
       // Always exclude jobs older than 45 days
       if (job.posted) {
         const daysAgo = (now.getTime() - new Date(job.posted + "T00:00:00").getTime()) / 86400000;
-        if (daysAgo > 45) return false;
+        if (daysAgo > 30) return false;
         if (dateFilter !== "all" && daysAgo > maxDays) return false;
       } else {
         return false;
@@ -463,18 +443,15 @@ export default function Home() {
           }
         }
       }
-      const jobRoleGroup = ROLE_GROUP[job.roleType] || job.roleType;
       const matchesRole =
-        roleType === "all" || jobRoleGroup === roleType;
+        roleType === "all" || job.roleType === roleType;
       let matchesLocation = false;
       if (location === "all") {
         matchesLocation = true;
       } else if (location === "remote") {
         matchesLocation = job.remote;
-      } else if (location === "us") {
-        matchesLocation = isUSLocation(job.location);
       } else if (location === "us_inperson") {
-        matchesLocation = isUSLocation(job.location) && !job.remote;
+        matchesLocation = !job.remote;
       } else if (location.startsWith("metro_")) {
         const metro = location.slice(6);
         const cities = METRO_AREAS[metro];
@@ -633,11 +610,11 @@ export default function Home() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All locations</SelectItem>
-              <SelectItem value="us">US only</SelectItem>
-              <SelectItem value="us_inperson">US in-person</SelectItem>
+              <SelectItem value="us_inperson">In-person</SelectItem>
               <SelectItem value="remote">Remote</SelectItem>
               <SelectItem value="metro_new york">NYC Metro</SelectItem>
               <SelectItem value="metro_los angeles">LA Metro</SelectItem>
+              <SelectItem value="metro_san francisco">SF Bay Area</SelectItem>
               <SelectItem value="metro_seattle">Seattle Metro</SelectItem>
               <SelectItem value="metro_chicago">Chicago Metro</SelectItem>
             </SelectContent>
@@ -648,8 +625,7 @@ export default function Home() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="7">Last 7 days</SelectItem>
-              <SelectItem value="30">Last 30 days</SelectItem>
-              <SelectItem value="all">Last 45 days</SelectItem>
+              <SelectItem value="all">Last 30 days</SelectItem>
             </SelectContent>
           </Select>
           <Select value={groupBy} onValueChange={(v) => { setGroupBy(v as "date" | "company" | "date-company"); setLetterFilter(null); }}>

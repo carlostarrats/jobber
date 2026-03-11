@@ -21,53 +21,90 @@ import requests
 COMPANIES_FILE = Path(__file__).parent / "companies.json"
 JOBS_FILE = Path(__file__).parent / "jobs.json"
 
-# Broad include: anything with design/designer/ux/user experience in the title
-TITLE_INCLUDE = re.compile(
-    r"\bdesign"          # designer, design lead, design systems, etc.
-    r"|\bux\b"           # UX researcher, UX lead, etc.
-    r"|user.experience"  # User Experience, User-Experience
-    r"|\binterface\b"    # Interface Designer
-    r"|\binteraction\b"  # Interaction Designer
-    , re.IGNORECASE)
+# Only match UX Designer or Product Designer (with any level prefix)
+TITLE_PATTERN = re.compile(
+    r"\bux\s+designer\b"
+    r"|\bproduct\s+designer\b",
+    re.IGNORECASE)
 
-# Exclude non-design roles that happen to contain design keywords
-TITLE_EXCLUDE = re.compile(
-    r"\bengineer"           # Mechanical/Electrical/Hardware Design Engineer
-    r"|\btechnician"        # Design Technician, etc.
-    r"|recruit"             # Design Recruiter, Technical Recruiter
-    r"|program.manager"     # Design Program Manager
-    r"|\bproduct.manag"     # Product Manager, Design Tools
-    r"|compensation"        # Head of Compensation Design
-    r"|instructional"       # Instructional Designer
-    r"|\bsales\b"           # Sales roles
-    r"|\baudit"             # Auditor roles
-    r"|\bcompliance\b"      # Compliance roles
-    , re.IGNORECASE)
-
-# Override: titles excluded above but should still be included
-# Only "Design Engineer" as the primary role (not "Mechanical Design Engineer" etc.)
-TITLE_OVERRIDE = re.compile(
-    r"^(?:sr\.?\s+|senior\s+|staff\s+|lead\s+|principal\s+|founding\s+)?(?:ui\s+)?design\s+engineer"
-    , re.IGNORECASE)
-
-# Role type categorization based on title keywords (order matters — first match wins)
+# Role type categorization
 ROLE_CATEGORIES = [
-    (r"ux research", "ux_research"),
-    (r"content design", "content_design"),
-    (r"design engineer|design technologist", "design_engineering"),
-    (r"design systems", "design_systems"),
-    (r"brand design", "brand_design"),
-    (r"graphic design", "brand_design"),
-    (r"visual design", "visual_design"),
-    (r"web design", "web_design"),
-    (r"ui.?(/|\\|,)?\s*ux|ux.?(/|\\|,)?\s*ui|ui design|\bui\b.*designer", "ui_design"),
-    (r"interaction design", "product_design"),
-    (r"experience design", "product_design"),
-    (r"product design", "product_design"),
-    (r"design director|design lead|head of design|design manager|director.*design|vp.*design", "design_leadership"),
-    (r"staff designer|senior designer|principal designer", "product_design"),
-    (r"\bdesigner\b", "product_design"),
+    (r"ux\s+designer", "ux_design"),
+    (r"product\s+designer", "product_design"),
 ]
+
+# --- US location detection ---
+US_STATES = {
+    "AL","AK","AZ","AR","CA","CO","CT","DE","FL","GA","HI","ID","IL","IN","IA",
+    "KS","KY","LA","ME","MD","MA","MI","MN","MS","MO","MT","NE","NV","NH","NJ",
+    "NM","NY","NC","ND","OH","OK","OR","PA","RI","SC","SD","TN","TX","UT","VT",
+    "VA","WA","WV","WI","WY","DC",
+}
+
+US_KEYWORDS_RE = re.compile(r"\bunited states\b|\busa\b|\bu\.s\.?\b", re.IGNORECASE)
+
+US_STATE_NAMES_RE = re.compile(
+    r"\b(alabama|alaska|arizona|arkansas|california|colorado|connecticut|delaware|"
+    r"florida|georgia|hawaii|idaho|illinois|indiana|iowa|kansas|kentucky|louisiana|"
+    r"maine|maryland|massachusetts|michigan|minnesota|mississippi|missouri|montana|"
+    r"nebraska|nevada|new hampshire|new jersey|new mexico|new york|north carolina|"
+    r"north dakota|ohio|oklahoma|oregon|pennsylvania|rhode island|south carolina|"
+    r"south dakota|tennessee|texas|utah|vermont|virginia|washington|west virginia|"
+    r"wisconsin|wyoming)\b", re.IGNORECASE)
+
+US_CITIES = {
+    # Major metros
+    "new york","new york city","nyc","manhattan","brooklyn","queens",
+    "san francisco","sf","oakland","berkeley","palo alto","menlo park","mountain view",
+    "san jose","sunnyvale","cupertino","santa clara","redwood city",
+    "los angeles","santa monica","pasadena","burbank","culver city","venice",
+    "seattle","bellevue","redmond","kirkland",
+    "chicago","evanston",
+    "boston","cambridge","somerville","waltham",
+    "washington","washington dc",
+    "austin","dallas","houston","san antonio","fort worth",
+    "denver","boulder",
+    "atlanta","decatur",
+    "miami","fort lauderdale",
+    "portland","philadelphia","pittsburgh",
+    "phoenix","scottsdale","tempe",
+    "minneapolis","saint paul","st paul",
+    "raleigh","durham","charlotte",
+    "detroit","ann arbor",
+    "nashville","salt lake city","san diego","las vegas","sacramento",
+    "indianapolis","columbus","cleveland","cincinnati",
+    "milwaukee","madison","tampa","orlando","jacksonville",
+    "richmond","arlington","alexandria","reston","bethesda",
+    "irvine","costa mesa","playa vista","el segundo",
+}
+
+
+def is_us_location(location):
+    """Check if a job location is in the United States. Remote jobs are included."""
+    if not location or location == "Unknown":
+        return False
+    loc_lower = location.lower().strip()
+    # Include remote jobs (most companies in our list are US-based)
+    if loc_lower in ("remote", "anywhere", "remote, us", "remote - us",
+                     "remote, usa", "remote - usa", "remote, united states"):
+        return True
+    if "remote" in loc_lower and ("us" in loc_lower or "united states" in loc_lower):
+        return True
+    if US_KEYWORDS_RE.search(location):
+        return True
+    if US_STATE_NAMES_RE.search(location):
+        return True
+    # State abbreviation after comma: "City, CA"
+    abbrev = re.search(r",\s*([A-Z]{2})\b", location)
+    if abbrev and abbrev.group(1) in US_STATES:
+        return True
+    if re.search(r"\bUS\s+[A-Z]{2}\b", location):
+        return True
+    city = location.split(",")[0].strip().lower().rstrip(".")
+    city = re.sub(r"\s*(office|hq|headquarters)\s*$", "", city, flags=re.IGNORECASE).strip()
+    if city in US_CITIES:
+        return True
+    return False
 
 SESSION = requests.Session()
 SESSION.headers.update({"User-Agent": "DesignJobBoard/1.0"})
@@ -77,9 +114,7 @@ _company_url_cache = {}
 
 
 def is_design_role(title):
-    if TITLE_OVERRIDE.search(title):
-        return True
-    return bool(TITLE_INCLUDE.search(title)) and not bool(TITLE_EXCLUDE.search(title))
+    return bool(TITLE_PATTERN.search(title))
 
 
 def categorize_role(title):
@@ -156,6 +191,8 @@ def scrape_greenhouse(slug):
                 company_url = get_greenhouse_company_url(slug)
 
             location = job.get("location", {}).get("name", "Unknown")
+            if not is_us_location(location):
+                continue
             updated = job.get("updated_at", "")
 
             jobs.append({
@@ -198,6 +235,8 @@ def scrape_lever(slug):
                 company_url = get_lever_company_url(slug)
 
             location = job.get("categories", {}).get("location", "Unknown")
+            if not is_us_location(location):
+                continue
             commitment = job.get("categories", {}).get("commitment", "")
             created = job.get("createdAt", 0)
             posted = ""
@@ -245,6 +284,8 @@ def scrape_ashby(slug):
                 company_url = get_ashby_company_url(slug)
 
             location = job.get("location", "Unknown")
+            if not is_us_location(location):
+                continue
             is_remote = job.get("isRemote", False)
             published = job.get("publishedAt", "")
 

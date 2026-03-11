@@ -24,7 +24,9 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 - Zero cost — no paid APIs for scraping (Greenhouse/Lever/Ashby endpoints are public), free tiers for SerpAPI, GitHub Actions, and Vercel
 - Static site — jobs.json is baked in at build time, no server or database needed
 - Company slugs are the key identifier — extracted from URLs like `boards.greenhouse.io/{slug}`
-- Jobs older than 90 days are always hidden from the UI
+- Jobs older than 30 days are always hidden from the UI
+- Only US-based jobs are scraped (non-US locations filtered out at scrape time)
+- Only two role types: UX Designer and Product Designer (with any level prefix like Senior, Lead, Principal)
 
 ## Scraper API endpoints
 
@@ -46,9 +48,9 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 - **Numbered job cards** — Each job has a row number for easy reference
 - **Date sections** — Jobs grouped by posted date with date header and dotted line separator (larger font, generous spacing between sections)
 - **Search** — Searches job title, company, and location. Metro area expansion: searching a major city name (e.g., "Los Angeles", "San Francisco", "New York", "Seattle", "Chicago") also matches jobs in surrounding suburbs and satellite cities. 25 metro areas defined with comprehensive suburb lists.
-- **Role filter** — Product Design, UI/UX Design, Visual Design, UX Research, Content Design, Design Engineering, Design Systems, Brand Design, Web Design, Design Leadership
-- **Location filter** — "All locations", "US only", "US in-person" (US jobs excluding remote), "Remote". US detection uses state abbreviations, state names, US keywords, and a curated list of US city names (including metro area suburbs around NYC, SF Bay Area, LA, Seattle, Chicago, Boston, DC, and other tech hubs)
-- **Date filter** — "Last 7 days", "Last 30 days", "Last 90 days" (default). Jobs older than 90 days are always excluded
+- **Role filter** — Product Designer, UX Designer
+- **Location filter** — "All locations", "In-person", "Remote", plus metro area filters (NYC, LA, SF Bay Area, Seattle, Chicago). All jobs are US-based (filtered at scrape time)
+- **Date filter** — "Last 7 days", "Last 30 days" (default). Jobs older than 30 days are always excluded
 - **Save** — Click "Save" on any job to bookmark it. "View saved" button in header shows saved jobs. Persisted in localStorage
 - **Company links** — Company name links to their job board page with a chain-link icon
 - **City column** — Separate fixed-width column on desktop (right-aligned before buttons), wraps under company name on mobile
