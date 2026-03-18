@@ -2,6 +2,8 @@
 
 Free job board for designers. Automatically scrapes design roles from Greenhouse, Lever, and Ashby — no accounts, no fees.
 
+![Jobber screenshot](screenshot.png)
+
 ## How it works
 
 1. **Discovery** — A monthly script uses SerpAPI to find companies posting design jobs across Greenhouse, Lever, and Ashby
