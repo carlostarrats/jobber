@@ -1,3 +1,8 @@
+
+<img width="1312" height="1061" alt="jobber" src="https://github.com/user-attachments/assets/a76cba16-1f75-4e0b-83be-89336bb9e3a7" />
+
+
+
 # Jobber
 
 Free job board for designers. Automatically scrapes design roles from Greenhouse, Lever, and Ashby — no accounts, no fees.
