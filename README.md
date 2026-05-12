@@ -1,10 +1,12 @@
 # Jobber
 
-Free job board for designers. Automatically scrapes design roles from Greenhouse, Lever, and Ashby — no accounts, no fees.
+Free job board for designers. Automatically scrapes design roles from Greenhouse, Lever, Ashby, and Gem — no accounts, no fees.
+
+![Jobber screenshot](screenshot.png)
 
 ## How it works
 
-1. **Discovery** — A monthly script uses SerpAPI to find companies posting design jobs across Greenhouse, Lever, and Ashby
+1. **Discovery** — A monthly script uses SerpAPI to find companies posting design jobs across Greenhouse, Lever, Ashby, and Gem
 2. **Scraping** — A weekly script hits the free public APIs for each platform, filters for design roles, and outputs `jobs.json`
 3. **Website** — A static Next.js site reads `jobs.json` at build time and deploys to Vercel for free
 
@@ -12,7 +14,7 @@ The whole thing runs hands-free via GitHub Actions.
 
 ## Features
 
-- **420+ design jobs** from 162 companies across Greenhouse, Lever, and Ashby
+- **420+ design jobs** from 162 companies across Greenhouse, Lever, Ashby, and Gem
 - **Search** by job title, company, or location
 - **Filter by role** — Product Design, UI/UX, Visual Design, UX Research, Content Design, Design Engineering, Design Systems, Brand Design, Web Design, Design Leadership
 - **Filter by location** — All, US only, or Remote
@@ -47,6 +49,13 @@ web/
 - **Frontend**: Next.js 16, React 19, TypeScript, Tailwind CSS v4, shadcn/ui
 - **Hosting**: Vercel (free tier)
 - **Automation**: GitHub Actions
+
+## Supported job platforms
+
+- **Greenhouse**: `https://boards-api.greenhouse.io/v1/boards/{slug}/jobs`
+- **Lever**: `https://api.lever.co/v0/postings/{slug}`
+- **Ashby**: `https://api.ashbyhq.com/posting-api/job-board/{slug}`
+- **Gem**: `https://api.gem.com/job_board/v0/{slug}/job_posts/`
 
 ## Setup
 

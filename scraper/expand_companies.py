@@ -35,11 +35,13 @@ _rate_locks = {
     "greenhouse": threading.Lock(),
     "lever": threading.Lock(),
     "ashby": threading.Lock(),
+    "gem": threading.Lock(),
 }
 _last_request_time = {
     "greenhouse": 0.0,
     "lever": 0.0,
     "ashby": 0.0,
+    "gem": 0.0,
 }
 MIN_DELAY = 0.3  # seconds between requests per platform
 
@@ -91,10 +93,23 @@ def validate_ashby(slug):
         return False
 
 
+def validate_gem(slug):
+    _rate_limit("gem")
+    try:
+        resp = SESSION.get(
+            f"https://api.gem.com/job_board/v0/{slug}/job_posts/",
+            timeout=10,
+        )
+        return resp.status_code == 200
+    except Exception:
+        return False
+
+
 VALIDATORS = {
     "greenhouse": validate_greenhouse,
     "lever": validate_lever,
     "ashby": validate_ashby,
+    "gem": validate_gem,
 }
 
 # --- External source fetchers ---
@@ -133,7 +148,7 @@ def fetch_yc_slugs():
 def fetch_aggregator_slugs():
     """Fetch company lists from community job board aggregator repos."""
     base = "https://raw.githubusercontent.com/Feashliaa/job-board-aggregator/main/data"
-    result = {"greenhouse": [], "lever": [], "ashby": []}
+    result = {"greenhouse": [], "lever": [], "ashby": [], "gem": []}
     for platform in result:
         url = f"{base}/{platform}_companies.json"
         print(f"  Fetching aggregator {platform} list...")
@@ -439,6 +454,23 @@ CURATED_SLUGS = {
         "span", "tavus", "traba", "wander",
         "sleeper", "socket", "synthflow",
     ],
+    "gem": [
+        # Gem ATS boards use configurable vanity URL paths, usually company slugs.
+        "gem", "tropic", "linktree",
+        "figma", "notion", "canva", "miro", "webflow", "framer", "linear",
+        "vercel", "coinbase", "plaid", "brex", "mercury", "stripe",
+        "anthropic", "openai", "perplexity", "cursor", "cohere", "runway",
+        "cloudflare", "databricks", "twilio", "okta", "airtable", "asana",
+        "amplitude", "hashicorp", "mongodb", "zendesk", "intercom",
+        "segment", "mixpanel", "launchdarkly", "contentful", "sanity",
+        "supabase", "posthog", "retool", "railway", "netlify", "render",
+        "replit", "sentry", "sourcegraph", "snyk", "1password", "vanta",
+        "spotify", "medium", "substack", "reddit", "hopper", "lime",
+        "opensea", "phantom", "polymarket", "kalshi", "zapier", "gusto",
+        "rippling", "deel", "lattice", "cultureamp", "loom", "calendly",
+        "squarespace", "eventbrite", "seatgeek", "warbyparker", "allbirds",
+        "anduril", "ironclad", "dandy", "traba",
+    ],
 }
 
 
@@ -480,7 +512,7 @@ def run():
         with open(COMPANIES_FILE, "r") as f:
             companies = json.load(f)
     else:
-        companies = {"greenhouse": [], "lever": [], "ashby": []}
+        companies = {platform: [] for platform in CURATED_SLUGS}
 
     existing_sets = {p: set(companies.get(p, [])) for p in CURATED_SLUGS}
 
