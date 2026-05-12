@@ -1,6 +1,6 @@
 """
 Phase 3: Job Scraper
-Reads companies.json, hits the free public APIs for Greenhouse/Lever/Ashby,
+Reads companies.json, hits the free public APIs for Greenhouse/Lever/Ashby/Gem,
 filters for design roles, and writes jobs.json.
 
 Usage:
@@ -145,29 +145,86 @@ def extract_city(location):
 
 def get_greenhouse_company_url(slug):
     """Return Greenhouse job board URL for the company."""
-    if slug in _company_url_cache:
-        return _company_url_cache[slug]
+    cache_key = ("greenhouse", slug)
+    if cache_key in _company_url_cache:
+        return _company_url_cache[cache_key]
     url = f"https://boards.greenhouse.io/{slug}"
-    _company_url_cache[slug] = url
+    _company_url_cache[cache_key] = url
     return url
 
 
 def get_lever_company_url(slug):
     """Lever doesn't expose company URL in API, construct careers page."""
-    if slug in _company_url_cache:
-        return _company_url_cache[slug]
+    cache_key = ("lever", slug)
+    if cache_key in _company_url_cache:
+        return _company_url_cache[cache_key]
     url = f"https://jobs.lever.co/{slug}"
-    _company_url_cache[slug] = url
+    _company_url_cache[cache_key] = url
     return url
 
 
 def get_ashby_company_url(slug):
     """Ashby job board API may include company info."""
-    if slug in _company_url_cache:
-        return _company_url_cache[slug]
+    cache_key = ("ashby", slug)
+    if cache_key in _company_url_cache:
+        return _company_url_cache[cache_key]
     url = f"https://jobs.ashbyhq.com/{slug}"
-    _company_url_cache[slug] = url
+    _company_url_cache[cache_key] = url
     return url
+
+
+def get_gem_company_url(slug):
+    """Return Gem-hosted job board URL for the company."""
+    cache_key = ("gem", slug)
+    if cache_key in _company_url_cache:
+        return _company_url_cache[cache_key]
+    url = f"https://jobs.gem.com/{slug}"
+    _company_url_cache[cache_key] = url
+    return url
+
+
+def extract_gem_location(job):
+    """Gem boards can expose locations as strings, objects, offices, or arrays."""
+    direct = job.get("location")
+    if isinstance(direct, str) and direct.strip():
+        return direct.strip()
+    if isinstance(direct, dict):
+        for key in ("location", "name", "display_name"):
+            value = direct.get(key)
+            if value:
+                return str(value).strip()
+
+    for list_key in ("locations", "offices"):
+        values = job.get(list_key)
+        if not isinstance(values, list):
+            continue
+        names = []
+        for value in values:
+            if isinstance(value, str) and value.strip():
+                names.append(value.strip())
+            elif isinstance(value, dict):
+                for key in ("location", "name", "display_name"):
+                    name = value.get(key)
+                    if name:
+                        names.append(str(name).strip())
+                        break
+        if names:
+            return "; ".join(names)
+
+    return "Unknown"
+
+
+def extract_gem_jobs(data):
+    """Return the job-post list from known Gem Job Board API response shapes."""
+    if isinstance(data, list):
+        return data
+    if not isinstance(data, dict):
+        return []
+    for key in ("job_posts", "jobs", "results", "data"):
+        jobs = data.get(key)
+        if isinstance(jobs, list):
+            return jobs
+    return []
 
 
 def scrape_greenhouse(slug):
@@ -309,10 +366,71 @@ def scrape_ashby(slug):
         return []
 
 
+def scrape_gem(slug):
+    """Gem has a public Job Board API for Gem ATS job boards."""
+    url = f"https://api.gem.com/job_board/v0/{slug}/job_posts/"
+    try:
+        resp = SESSION.get(url, timeout=10)
+        if resp.status_code != 200:
+            return []
+        jobs_list = extract_gem_jobs(resp.json())
+        jobs = []
+        company_url = None
+
+        for job in jobs_list:
+            title = job.get("title", "")
+            if not is_design_role(title):
+                continue
+
+            location = extract_gem_location(job)
+            if not is_us_location(location):
+                continue
+
+            if company_url is None:
+                company_url = get_gem_company_url(slug)
+
+            job_id = job.get("id") or job.get("job_id") or job.get("uuid") or ""
+            published = (
+                job.get("published_at")
+                or job.get("publishedAt")
+                or job.get("created_at")
+                or job.get("updated_at")
+                or ""
+            )
+            job_url = (
+                job.get("url")
+                or job.get("job_url")
+                or job.get("jobPostUrl")
+                or job.get("job_post_url")
+                or job.get("external_url")
+                or f"https://jobs.gem.com/{slug}/{job_id}"
+            )
+
+            jobs.append({
+                "id": f"gm-{slug}-{job_id}",
+                "title": title,
+                "company": slug,
+                "companyUrl": company_url,
+                "location": location,
+                "city": extract_city(location),
+                "remote": "remote" in location.lower(),
+                "url": job_url,
+                "platform": "gem",
+                "roleType": categorize_role(title),
+                "posted": published[:10] if published else "",
+                "scraped": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+            })
+        return jobs
+    except Exception as e:
+        print(f"    Error scraping {slug}: {e}")
+        return []
+
+
 SCRAPERS = {
     "greenhouse": scrape_greenhouse,
     "lever": scrape_lever,
     "ashby": scrape_ashby,
+    "gem": scrape_gem,
 }
 
 

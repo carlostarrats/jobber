@@ -1,6 +1,6 @@
 """
 Phase 2: Company Discovery
-Uses SerpAPI to find companies with design jobs on Greenhouse, Lever, and Ashby.
+Uses SerpAPI to find companies with design jobs on Greenhouse, Lever, Ashby, and Gem.
 
 Usage:
   pip install serpapi
@@ -53,6 +53,10 @@ PLATFORMS = {
         "site": "jobs.ashbyhq.com",
         "slug_pattern": r"jobs\.ashbyhq\.com/([a-zA-Z0-9_-]+)",
     },
+    "gem": {
+        "site": "jobs.gem.com",
+        "slug_pattern": r"jobs\.gem\.com/([a-zA-Z0-9_-]+)",
+    },
 }
 
 COMPANIES_FILE = Path(__file__).parent / "companies.json"
@@ -62,7 +66,7 @@ def load_existing():
     if COMPANIES_FILE.exists():
         with open(COMPANIES_FILE, "r") as f:
             return json.load(f)
-    return {"greenhouse": [], "lever": [], "ashby": []}
+    return {platform: [] for platform in PLATFORMS}
 
 
 def extract_slugs(results, platform):

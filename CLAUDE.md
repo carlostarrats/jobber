@@ -1,13 +1,13 @@
 # Jobber
 
-Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
+Free design job board that scrapes listings from Greenhouse, Lever, Ashby, and Gem.
 
 ## Architecture
 
 - **scraper/** — Python scripts that discover companies and scrape job listings
   - `discover_companies.py` — Uses SerpAPI to find company slugs via Google dorking
   - `expand_companies.py` — Bulk expands companies.json with ~500 curated tech company slugs, validates each against public APIs using ThreadPoolExecutor (5 workers per platform), merges valid ones. No API keys needed.
-  - `scrape_jobs.py` — Hits public JSON APIs for Greenhouse, Lever, Ashby; filters for design roles; outputs `jobs.json`
+  - `scrape_jobs.py` — Hits public JSON APIs for Greenhouse, Lever, Ashby, Gem; filters for design roles; outputs `jobs.json`
   - No database — everything is flat JSON files (`companies.json`, `jobs.json`)
 
 - **web/** — Next.js 16 + shadcn/ui static site
@@ -21,7 +21,7 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 
 ## Key decisions
 
-- Zero cost — no paid APIs for scraping (Greenhouse/Lever/Ashby endpoints are public), free tiers for SerpAPI, GitHub Actions, and Vercel
+- Zero cost — no paid APIs for scraping (Greenhouse/Lever/Ashby/Gem endpoints are public), free tiers for SerpAPI, GitHub Actions, and Vercel
 - Static site — jobs.json is baked in at build time, no server or database needed
 - Company slugs are the key identifier — extracted from URLs like `boards.greenhouse.io/{slug}`
 - Jobs older than 30 days are always hidden from the UI
@@ -34,11 +34,12 @@ Free design job board that scrapes listings from Greenhouse, Lever, and Ashby.
 - **Lever**: `GET https://api.lever.co/v0/postings/{slug}` — public JSON API, no auth
 - **Ashby**: `GET https://api.ashbyhq.com/posting-api/job-board/{slug}` — public GET endpoint, no auth
   - Note: Ashby previously used a POST endpoint with `{"jobBoardId": slug}` which now returns 401. The GET endpoint is the correct approach.
+- **Gem**: `GET https://api.gem.com/job_board/v0/{slug}/job_posts/` — public Job Board API for Gem ATS boards, no auth
 
 ## Scraper details
 
 - `extract_city()` strips parentheticals like "(Hybrid)", "(HQ)" and "Remote (US)" prefixes before extracting city names
-- Company URLs: Greenhouse uses `boards.greenhouse.io/{slug}`, Lever uses `jobs.lever.co/{slug}`, Ashby uses `jobs.ashbyhq.com/{slug}`
+- Company URLs: Greenhouse uses `boards.greenhouse.io/{slug}`, Lever uses `jobs.lever.co/{slug}`, Ashby uses `jobs.ashbyhq.com/{slug}`, Gem uses `jobs.gem.com/{slug}`
 - Ashby provides an `isRemote` boolean field; Greenhouse and Lever infer remote from location strings
 - 0.5s delay between companies (politeness)
 - No API keys needed for scraping — only `discover_companies.py` needs SERPAPI_KEY

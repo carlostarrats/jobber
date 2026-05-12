@@ -23,7 +23,7 @@ type Job = {
   city: string;
   remote: boolean;
   url: string;
-  platform: "greenhouse" | "lever" | "ashby";
+  platform: "greenhouse" | "lever" | "ashby" | "gem";
   roleType: string;
   posted: string;
   scraped: string;
