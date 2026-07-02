@@ -17,15 +17,16 @@ Free design job board that scrapes listings from Greenhouse, Lever, Ashby, and G
 
 - **.github/workflows/** — GitHub Actions automation
   - `discover.yml` — Monthly company discovery via SerpAPI
-  - `scrape.yml` — Weekly job scraping, commits updated data, triggers Vercel rebuild
+  - `scrape.yml` — Daily job scraping, commits updated data, triggers Vercel rebuild
 
 ## Key decisions
 
 - Zero cost — no paid APIs for scraping (Greenhouse/Lever/Ashby/Gem endpoints are public), free tiers for SerpAPI, GitHub Actions, and Vercel
 - Static site — jobs.json is baked in at build time, no server or database needed
 - Company slugs are the key identifier — extracted from URLs like `boards.greenhouse.io/{slug}`
-- Jobs older than 30 days are always hidden from the UI
-- Only US-based jobs are scraped (non-US locations filtered out at scrape time)
+- Jobs older than 14 days are pruned at scrape time (never stored in jobs.json) and also hidden in the UI
+- Location scope: remote (US) jobs are kept regardless of city; in-person/hybrid jobs are kept only if their city is in the LA Metro commute area (`LA_METRO_CITIES` in scrape_jobs.py). Everything else is dropped at scrape time
+- `COMPANY_DENYLIST` in scrape_jobs.py always excludes certain slugs (e.g. anduril, gusto) even if present in companies.json
 - Only two role types: UX Designer and Product Designer (with any level prefix like Senior, Lead, Principal)
 
 ## Scraper API endpoints
@@ -50,8 +51,8 @@ Free design job board that scrapes listings from Greenhouse, Lever, Ashby, and G
 - **Date sections** — Jobs grouped by posted date with date header and dotted line separator (larger font, generous spacing between sections)
 - **Search** — Searches job title, company, and location. Metro area expansion: searching a major city name (e.g., "Los Angeles", "San Francisco", "New York", "Seattle", "Chicago") also matches jobs in surrounding suburbs and satellite cities. 25 metro areas defined with comprehensive suburb lists.
 - **Role filter** — Product Designer, UX Designer
-- **Location filter** — "All locations", "In-person", "Remote", plus metro area filters (NYC, LA, SF Bay Area, Seattle, Chicago). All jobs are US-based (filtered at scrape time)
-- **Date filter** — "Last 7 days", "Last 30 days" (default). Jobs older than 30 days are always excluded
+- **Location filter** — "All locations", "In-person (LA)", "Remote". All in-person jobs are LA Metro; all remote jobs are US (filtered at scrape time)
+- **Date filter** — "Last 7 days", "Last 14 days" (default). Jobs older than 14 days are always excluded
 - **Save** — Click "Save" on any job to bookmark it. "View saved" button in header shows saved jobs. Persisted in localStorage
 - **Company links** — Company name links to their job board page with a chain-link icon
 - **City column** — Separate fixed-width column on desktop (right-aligned before buttons), wraps under company name on mobile

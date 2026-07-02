@@ -2,8 +2,8 @@ name: Scrape Jobs
 
 on:
   schedule:
-    # Runs every Monday at 6am UTC
-    - cron: "0 6 * * 1"
+    # Runs daily at 6am UTC
+    - cron: "0 6 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
