@@ -413,16 +413,16 @@ export default function Home() {
   const filtered = useMemo(() => {
     const now = new Date();
     now.setHours(0, 0, 0, 0);
-    const maxDays = dateFilter === "7" ? 7 : 30;
+    const maxDays = dateFilter === "7" ? 7 : 14;
     return allJobs.filter((job) => {
       const isArchived = archived.has(job.id);
       if (showArchived && !isArchived) return false;
       if (!showArchived && isArchived) return false;
 
-      // Always exclude jobs older than 45 days
+      // Always exclude jobs older than 14 days
       if (job.posted) {
         const daysAgo = (now.getTime() - new Date(job.posted + "T00:00:00").getTime()) / 86400000;
-        if (daysAgo > 30) return false;
+        if (daysAgo > 14) return false;
         if (dateFilter !== "all" && daysAgo > maxDays) return false;
       } else {
         return false;
@@ -610,13 +610,8 @@ export default function Home() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="all">All locations</SelectItem>
-              <SelectItem value="us_inperson">In-person</SelectItem>
+              <SelectItem value="us_inperson">In-person (LA)</SelectItem>
               <SelectItem value="remote">Remote</SelectItem>
-              <SelectItem value="metro_new york">NYC Metro</SelectItem>
-              <SelectItem value="metro_los angeles">LA Metro</SelectItem>
-              <SelectItem value="metro_san francisco">SF Bay Area</SelectItem>
-              <SelectItem value="metro_seattle">Seattle Metro</SelectItem>
-              <SelectItem value="metro_chicago">Chicago Metro</SelectItem>
             </SelectContent>
           </Select>
           <Select value={dateFilter} onValueChange={setDateFilter}>
@@ -625,7 +620,7 @@ export default function Home() {
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="7">Last 7 days</SelectItem>
-              <SelectItem value="all">Last 30 days</SelectItem>
+              <SelectItem value="all">Last 14 days</SelectItem>
             </SelectContent>
           </Select>
           <Select value={groupBy} onValueChange={(v) => { setGroupBy(v as "date" | "company" | "date-company"); setLetterFilter(null); }}>

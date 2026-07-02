@@ -13,7 +13,7 @@ No API keys needed. All endpoints are public.
 import json
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
 
 import requests
@@ -77,6 +77,38 @@ US_CITIES = {
     "richmond","arlington","alexandria","reston","bethesda",
     "irvine","costa mesa","playa vista","el segundo",
 }
+
+# --- Retention & scope filters ---
+# Companies to always exclude, regardless of what's in companies.json.
+COMPANY_DENYLIST = {"andurilindustries", "anduril", "gusto"}
+
+# Only keep postings from the last 2 weeks.
+MAX_POSTING_AGE_DAYS = 14
+
+# LA Metro commute area. In-person / hybrid jobs are kept ONLY if their city is
+# in this set; remote (US) jobs are kept regardless of city. Tune as needed.
+LA_METRO_CITIES = {
+    "los angeles","la","santa monica","pasadena","burbank","culver city","venice",
+    "playa vista","el segundo","long beach","glendale","torrance","marina del rey",
+    "beverly hills","west hollywood","hollywood","manhattan beach","hermosa beach",
+    "redondo beach","inglewood","hawthorne","gardena","carson","downey","norwalk",
+    "cerritos","whittier","santa clarita","valencia","sherman oaks","studio city",
+    "north hollywood","van nuys","encino","woodland hills","calabasas","century city",
+    "alhambra","monterey park","arcadia","monrovia","el monte","montebello",
+    "pico rivera","pomona","westlake village","thousand oaks","agoura hills",
+    "commerce","vernon","south gate","bell","lynwood","paramount","bellflower",
+    "lakewood","san pedro","playa del rey","brentwood","westwood","mar vista",
+    "el monte","montrose","la canada","la canada flintridge","altadena",
+    # Close-in Orange County (commutable)
+    "irvine","costa mesa","anaheim","santa ana","huntington beach","fullerton",
+}
+
+
+def is_la_metro(location):
+    """True if the location's city is within the LA commute area."""
+    city = extract_city(location).strip().lower().rstrip(".")
+    city = re.sub(r"\s*(office|hq|headquarters)\s*$", "", city).strip()
+    return city in LA_METRO_CITIES
 
 
 def is_us_location(location):
@@ -450,6 +482,7 @@ def run():
             print(f"No scraper for {platform}, skipping")
             continue
 
+        slugs = [s for s in slugs if s.lower() not in COMPANY_DENYLIST]
         print(f"\n--- {platform.upper()} ({len(slugs)} companies) ---")
 
         for i, slug in enumerate(slugs):
@@ -459,10 +492,20 @@ def run():
             print(f" - {len(jobs)} design jobs")
             time.sleep(0.5)  # be polite
 
+    # Keep only remote (US) jobs or in-person/hybrid jobs in the LA Metro area.
+    scoped_jobs = [
+        job for job in all_jobs
+        if job.get("remote") or is_la_metro(job.get("location", ""))
+    ]
+
+    # Prune anything older than MAX_POSTING_AGE_DAYS (drops undated jobs too).
+    cutoff = (datetime.now(timezone.utc) - timedelta(days=MAX_POSTING_AGE_DAYS)).strftime("%Y-%m-%d")
+    scoped_jobs = [job for job in scoped_jobs if job.get("posted", "") >= cutoff]
+
     # Dedupe by URL
     seen = set()
     unique_jobs = []
-    for job in all_jobs:
+    for job in scoped_jobs:
         if job["url"] not in seen:
             seen.add(job["url"])
             unique_jobs.append(job)
