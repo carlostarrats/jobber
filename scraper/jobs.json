@@ -392,6 +392,20 @@
     "scraped": "2026-07-02"
   },
   {
+    "id": "ab-advanced-systems-group-481966f5-9871-42f9-8725-d386ff512e3e",
+    "title": "UX Designer (Temporary)",
+    "company": "advanced-systems-group",
+    "companyUrl": "https://jobs.ashbyhq.com/advanced-systems-group",
+    "location": "Remote, US",
+    "city": "",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/advanced-systems-group/481966f5-9871-42f9-8725-d386ff512e3e",
+    "platform": "ashby",
+    "roleType": "ux_design",
+    "posted": "2026-06-29",
+    "scraped": "2026-07-02"
+  },
+  {
     "id": "gh-coinbase-8014564",
     "title": "Staff Product Designer (Experience & Engagement)",
     "company": "coinbase",
@@ -700,6 +714,20 @@
     "scraped": "2026-07-02"
   },
   {
+    "id": "ab-propelus-ddca3984-5014-46e4-ae93-daef72cac0e3",
+    "title": "UX Designer Engineer",
+    "company": "propelus",
+    "companyUrl": "https://jobs.ashbyhq.com/propelus",
+    "location": "Remote - US",
+    "city": "US",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/propelus/ddca3984-5014-46e4-ae93-daef72cac0e3",
+    "platform": "ashby",
+    "roleType": "ux_design",
+    "posted": "2026-06-23",
+    "scraped": "2026-07-02"
+  },
+  {
     "id": "gh-figure-8334965002",
     "title": "Principal Product Designer",
     "company": "figure",
@@ -714,20 +742,6 @@
     "scraped": "2026-07-02"
   },
   {
-    "id": "gh-fundraiseup-4708163005",
-    "title": "Senior Product Designer",
-    "company": "fundraiseup",
-    "companyUrl": "https://boards.greenhouse.io/fundraiseup",
-    "location": "Georgia - Remote",
-    "city": "Georgia - Remote",
-    "remote": true,
-    "url": "https://fundraiseup.com/careers/4708163005/?gh_jid=4708163005",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-06-22",
-    "scraped": "2026-07-02"
-  },
-  {
     "id": "gh-fundraiseup-4708159005",
     "title": "Senior Product Designer",
     "company": "fundraiseup",
@@ -736,6 +750,20 @@
     "city": "Cyprus - Remote",
     "remote": true,
     "url": "https://fundraiseup.com/careers/4708159005/?gh_jid=4708159005",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-06-22",
+    "scraped": "2026-07-02"
+  },
+  {
+    "id": "gh-fundraiseup-4708163005",
+    "title": "Senior Product Designer",
+    "company": "fundraiseup",
+    "companyUrl": "https://boards.greenhouse.io/fundraiseup",
+    "location": "Georgia - Remote",
+    "city": "Georgia - Remote",
+    "remote": true,
+    "url": "https://fundraiseup.com/careers/4708163005/?gh_jid=4708163005",
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
