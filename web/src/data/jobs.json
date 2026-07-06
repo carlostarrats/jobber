@@ -1,19 +1,5 @@
 [
   {
-    "id": "gh-refurbed-4766101101",
-    "title": "Senior Mobile Product Designer (f/m/x) - Remote",
-    "company": "refurbed",
-    "companyUrl": "https://boards.greenhouse.io/refurbed",
-    "location": "Remote",
-    "city": "",
-    "remote": true,
-    "url": "https://www.refurbed.de/jobs/?gh_jid=4766101101",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-07-03",
-    "scraped": "2026-07-05"
-  },
-  {
     "id": "gh-twilio-7985610",
     "title": "Lead Product Designer",
     "company": "twilio",
@@ -24,8 +10,8 @@
     "url": "https://job-boards.greenhouse.io/twilio/jobs/7985610",
     "platform": "greenhouse",
     "roleType": "product_design",
-    "posted": "2026-07-03",
-    "scraped": "2026-07-05"
+    "posted": "2026-07-06",
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-twilio-7985808",
@@ -38,8 +24,8 @@
     "url": "https://job-boards.greenhouse.io/twilio/jobs/7985808",
     "platform": "greenhouse",
     "roleType": "product_design",
-    "posted": "2026-07-03",
-    "scraped": "2026-07-05"
+    "posted": "2026-07-06",
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-twilio-8039842",
@@ -52,8 +38,22 @@
     "url": "https://job-boards.greenhouse.io/twilio/jobs/8039842",
     "platform": "greenhouse",
     "roleType": "product_design",
+    "posted": "2026-07-06",
+    "scraped": "2026-07-06"
+  },
+  {
+    "id": "gh-refurbed-4766101101",
+    "title": "Senior Mobile Product Designer (f/m/x) - Remote",
+    "company": "refurbed",
+    "companyUrl": "https://boards.greenhouse.io/refurbed",
+    "location": "Remote",
+    "city": "",
+    "remote": true,
+    "url": "https://www.refurbed.de/jobs/?gh_jid=4766101101",
+    "platform": "greenhouse",
+    "roleType": "product_design",
     "posted": "2026-07-03",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-alt-7608960003",
@@ -67,7 +67,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-billtrust-7759285003",
@@ -81,7 +81,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-blastpoint-5179314007",
@@ -95,7 +95,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-dropbox-8003387",
@@ -109,7 +109,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-nex-5289200008",
@@ -123,7 +123,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-patientpoint-4710182005",
@@ -137,7 +137,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-pinterest-7638599",
@@ -151,7 +151,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-thenewyorktimes-4700770005",
@@ -165,7 +165,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-canals-4df5d8a8-6579-4418-9386-933601a50af0",
@@ -179,7 +179,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-clarasight-9919f782-95b8-42e1-9a57-d141adb13c29",
@@ -193,7 +193,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-handshake-d2f94a5f-077f-4361-8f67-7bf65f10562f",
@@ -207,7 +207,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-notion-d177d052-ef57-4900-acf2-d58e9eded620",
@@ -221,7 +221,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-02",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-lattice-8553095002",
@@ -235,7 +235,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-overstory-4606796101",
@@ -249,7 +249,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-pinterest-7770902",
@@ -263,7 +263,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-pinterest-7743636",
@@ -277,7 +277,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-pinterest-7839695",
@@ -291,7 +291,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-pinterest-7747116",
@@ -305,7 +305,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-tavahealth-7fecb520-3c13-4792-9a1d-3231620cb36d",
@@ -319,7 +319,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-01",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-blinkhealth-8420880002",
@@ -333,7 +333,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-boulevard-4691369006",
@@ -347,7 +347,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-bpcs-8040017",
@@ -361,7 +361,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-codepath-5160516007",
@@ -375,7 +375,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-gatherai-5176171007",
@@ -389,7 +389,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-novoed-7689315",
@@ -403,7 +403,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-securityscorecard-8039043",
@@ -417,7 +417,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-06-30",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-businessolver-8026185",
@@ -431,7 +431,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-cresta-5173681008",
@@ -445,7 +445,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-mercury-6001908004",
@@ -459,7 +459,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-mercury-5843845004",
@@ -473,7 +473,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-mercury-6099697004",
@@ -487,7 +487,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-metropolis-7732229003",
@@ -501,7 +501,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-omadahealth-7821718",
@@ -515,7 +515,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-pantheon-7994388",
@@ -529,7 +529,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-vercel-5735407004",
@@ -543,7 +543,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-advanced-systems-group-481966f5-9871-42f9-8725-d386ff512e3e",
@@ -557,7 +557,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-06-29",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-coinbase-8014564",
@@ -571,7 +571,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-elationhealth-8014971",
@@ -585,7 +585,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-hightouch-6103070004",
@@ -599,7 +599,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-leveltenenergy-6093017004",
@@ -613,7 +613,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-nichecom-6100597004",
@@ -627,7 +627,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-stripe-8001660",
@@ -641,7 +641,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-speak-9fe4ab05-3871-4f3f-bed2-3b97bf9b077c",
@@ -655,7 +655,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-stellic-acc837f7-d08a-46b5-82a1-880a47727b61",
@@ -669,7 +669,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-vetcove-9c4e698b-dbf9-450c-9a51-d7285b372d6b",
@@ -683,7 +683,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-26",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-gitlab-8464608002",
@@ -697,7 +697,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-25",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-standardmetrics-4130794005",
@@ -711,7 +711,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-25",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-kin-ff6b1a90-1055-41e1-8748-3288d58f53c5",
@@ -725,7 +725,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-25",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-miter-aa268f11-ce20-439e-8790-1ff9a4889d49",
@@ -739,7 +739,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-25",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-instacart-8026684",
@@ -753,7 +753,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-24",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-instacart-7976867",
@@ -767,7 +767,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-24",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-1password-92ec0d71-2abd-40a9-b541-1fe2524b385c",
@@ -781,7 +781,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-24",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-junipersquare-a5aec213-81c1-4e72-a583-bb4789735b0d",
@@ -795,7 +795,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-06-24",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-neweratech-8578630002",
@@ -809,7 +809,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-23",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-spycloud-7751870003",
@@ -823,7 +823,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-23",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-hudu-de96420b-481f-4e5e-819f-677e62c30fb5",
@@ -837,7 +837,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-06-23",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "ab-propelus-ddca3984-5014-46e4-ae93-daef72cac0e3",
@@ -851,7 +851,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-06-23",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-figure-8334965002",
@@ -865,7 +865,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-fundraiseup-4708159005",
@@ -879,7 +879,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-fundraiseup-4708163005",
@@ -893,7 +893,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-mavenclinic-8599242002",
@@ -907,7 +907,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-praxent-7728015003",
@@ -921,7 +921,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-samsara-8007939",
@@ -935,7 +935,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-toast-7908658",
@@ -949,7 +949,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-twinhealth-6020240004",
@@ -963,7 +963,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   },
   {
     "id": "gh-veracyte-5164024007",
@@ -977,20 +977,6 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-06-22",
-    "scraped": "2026-07-05"
-  },
-  {
-    "id": "ab-duck-duck-go-776bd1c8-81aa-4719-8238-ba357e1f5271",
-    "title": "Senior Product Designer",
-    "company": "duck-duck-go",
-    "companyUrl": "https://jobs.ashbyhq.com/duck-duck-go",
-    "location": "Remote",
-    "city": "",
-    "remote": true,
-    "url": "https://jobs.ashbyhq.com/duck-duck-go/776bd1c8-81aa-4719-8238-ba357e1f5271",
-    "platform": "ashby",
-    "roleType": "product_design",
-    "posted": "2026-06-22",
-    "scraped": "2026-07-05"
+    "scraped": "2026-07-06"
   }
 ]
