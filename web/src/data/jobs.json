@@ -1,5 +1,243 @@
 [
   {
+    "id": "gh-3cloud-8671403002",
+    "title": "Senior UX Designer ",
+    "company": "3cloud",
+    "companyUrl": "https://boards.greenhouse.io/3cloud",
+    "location": "Remote - US",
+    "city": "US",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/3cloud/jobs/8671403002?gh_jid=8671403002",
+    "platform": "greenhouse",
+    "roleType": "ux_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-alphasense-8530664002",
+    "title": "Senior/Staff Product Designer",
+    "company": "alphasense",
+    "companyUrl": "https://boards.greenhouse.io/alphasense",
+    "location": "New York, New York, United States; Remote - United States",
+    "city": "New York",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/alphasense/jobs/8530664002",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-apolloio-6112170004",
+    "title": "Senior Product Designer",
+    "company": "apolloio",
+    "companyUrl": "https://boards.greenhouse.io/apolloio",
+    "location": "Remote, United States",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/apolloio/jobs/6112170004",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-circleso-5153629008",
+    "title": "Lead Product Designer",
+    "company": "circleso",
+    "companyUrl": "https://boards.greenhouse.io/circleso",
+    "location": "Remote",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/circleso/jobs/5153629008",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-dropbox-8003387",
+    "title": "Principal Product Designer",
+    "company": "dropbox",
+    "companyUrl": "https://boards.greenhouse.io/dropbox",
+    "location": "Remote - US: Select locations",
+    "city": "US: Select locations",
+    "remote": true,
+    "url": "https://jobs.dropbox.com/listing/8003387?gh_jid=8003387",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-dropbox-8092712",
+    "title": "Staff Product Designer",
+    "company": "dropbox",
+    "companyUrl": "https://boards.greenhouse.io/dropbox",
+    "location": "Remote - US: Select locations",
+    "city": "US: Select locations",
+    "remote": true,
+    "url": "https://jobs.dropbox.com/listing/8092712?gh_jid=8092712",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-fundraiseup-4708159005",
+    "title": "Senior Product Designer",
+    "company": "fundraiseup",
+    "companyUrl": "https://boards.greenhouse.io/fundraiseup",
+    "location": "Cyprus - Remote",
+    "city": "Cyprus - Remote",
+    "remote": true,
+    "url": "https://fundraiseup.com/careers/4708159005/?gh_jid=4708159005",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-fundraiseup-4708163005",
+    "title": "Senior Product Designer",
+    "company": "fundraiseup",
+    "companyUrl": "https://boards.greenhouse.io/fundraiseup",
+    "location": "Georgia - Remote",
+    "city": "Georgia - Remote",
+    "remote": true,
+    "url": "https://fundraiseup.com/careers/4708163005/?gh_jid=4708163005",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-gitlab-8464608002",
+    "title": "Senior Product Designer, AI",
+    "company": "gitlab",
+    "companyUrl": "https://boards.greenhouse.io/gitlab",
+    "location": "Remote, Canada; Remote, US",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/gitlab/jobs/8464608002",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-gitlab-8475077002",
+    "title": "Staff Product Designer, Knowledge Graph",
+    "company": "gitlab",
+    "companyUrl": "https://boards.greenhouse.io/gitlab",
+    "location": "Remote, Canada; Remote, United Kingdom; Remote, US",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/gitlab/jobs/8475077002",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-netlify-8643850002",
+    "title": "Staff Product Designer & Researcher",
+    "company": "netlify",
+    "companyUrl": "https://boards.greenhouse.io/netlify",
+    "location": "Remote",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/netlify/jobs/8643850002",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-pinterest-7638599",
+    "title": "Principal Product Designer, AI Native, Core",
+    "company": "pinterest",
+    "companyUrl": "https://boards.greenhouse.io/pinterest",
+    "location": "San Francisco, CA, US; Remote, US",
+    "city": "San Francisco",
+    "remote": true,
+    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7638599",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "gh-smartasset-8653668002",
+    "title": "Product Designer",
+    "company": "smartasset",
+    "companyUrl": "https://boards.greenhouse.io/smartasset",
+    "location": "Remote ",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/smartasset/jobs/8653668002",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "ab-headway-f436b4ca-0425-4571-bf22-536cdaa44c8e",
+    "title": "Senior Product Designer, Provider Acquisition",
+    "company": "headway",
+    "companyUrl": "https://jobs.ashbyhq.com/headway",
+    "location": "New York City",
+    "city": "New York City",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/headway/f436b4ca-0425-4571-bf22-536cdaa44c8e",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "ab-headway-70cf4d2f-fccf-4415-8a8f-1f3d55485bdb",
+    "title": "Staff Product Designer, Provider CRM & Prospect Management",
+    "company": "headway",
+    "companyUrl": "https://jobs.ashbyhq.com/headway",
+    "location": "New York, NY",
+    "city": "New York",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/headway/70cf4d2f-fccf-4415-8a8f-1f3d55485bdb",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "ab-injective-labs-d4a73650-0bcd-4bc4-92c0-45ce9f885540",
+    "title": "Product Designer",
+    "company": "injective-labs",
+    "companyUrl": "https://jobs.ashbyhq.com/injective-labs",
+    "location": "United States",
+    "city": "United States",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/injective-labs/d4a73650-0bcd-4bc4-92c0-45ce9f885540",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
+    "id": "ab-runway-ml-28e151ac-cb29-4695-9041-a9e352624111",
+    "title": "Sr./Staff Product Designer, Growth",
+    "company": "runway-ml",
+    "companyUrl": "https://jobs.ashbyhq.com/runway-ml",
+    "location": "Remote",
+    "city": "",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/runway-ml/28e151ac-cb29-4695-9041-a9e352624111",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-08-03",
+    "scraped": "2026-08-04"
+  },
+  {
     "id": "ab-bjakcareer-123d959b-a14a-4ec8-970d-fc803473e2c6",
     "title": "Product Designer (UX), HCI",
     "company": "bjakcareer",
@@ -11,7 +249,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-08-02",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-bjakcareer-fb818c30-91cf-4a2a-a716-c58942b06597",
@@ -25,7 +263,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-08-02",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-oscar-7681404",
@@ -39,7 +277,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-31",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-upstart-7863233",
@@ -53,7 +291,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-31",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-believer-b26e8a52-86c6-4086-b375-6ea7a7e2760f",
@@ -67,7 +305,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-07-31",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-bjakcareer-fb92928d-a488-4073-a340-b7cf3b85f4aa",
@@ -81,7 +319,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-07-31",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-bjakcareer-68d4e744-0567-40b5-9ffb-c0e683697687",
@@ -95,7 +333,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-07-31",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-stable-00ace407-0861-4e58-b578-d3ee18fc1ccd",
@@ -109,7 +347,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-31",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-blinkhealth-8652757002",
@@ -123,7 +361,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-gemini-7811967",
@@ -137,7 +375,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-mavenclinic-8599242002",
@@ -151,7 +389,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-nflcareers-5265702008",
@@ -165,7 +403,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-omadahealth-7821718",
@@ -179,7 +417,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-omadahealth-7800336",
@@ -193,7 +431,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-samsara-8007939",
@@ -207,7 +445,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-tekmetric-5790974004",
@@ -221,7 +459,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-toast-7908658",
@@ -235,7 +473,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-30",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-codepath-5160516007",
@@ -249,7 +487,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-29",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-twilio-8039842",
@@ -263,7 +501,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-29",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-later-8372380002",
@@ -277,7 +515,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-nationalpublicradioinc-4716901005",
@@ -291,21 +529,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
-  },
-  {
-    "id": "gh-pinterest-7638599",
-    "title": "Principal Product Designer, AI Native, Core",
-    "company": "pinterest",
-    "companyUrl": "https://boards.greenhouse.io/pinterest",
-    "location": "San Francisco, CA, US; Remote, US",
-    "city": "San Francisco",
-    "remote": true,
-    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=7638599",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-pinterest-7770902",
@@ -319,7 +543,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-pinterest-7839695",
@@ -333,7 +557,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-reddit-7701558",
@@ -347,7 +571,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-residenthome-5824773004",
@@ -361,7 +585,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-atlas-91ef057b-5808-4abd-84ec-2c7315f0cd57",
@@ -375,7 +599,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-permitflow-9c3cac9e-2a67-4d7e-8098-42092a628390",
@@ -389,7 +613,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-permitflow-1182941e-6529-4e37-93ce-cd1da4cb9a57",
@@ -403,7 +627,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-volta-b98857b1-a800-44a3-a6df-7b16f4456f06",
@@ -417,7 +641,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-07-28",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-life360-8649062002",
@@ -431,21 +655,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
-  },
-  {
-    "id": "gh-netlify-8643850002",
-    "title": "Staff Product Designer & Researcher",
-    "company": "netlify",
-    "companyUrl": "https://boards.greenhouse.io/netlify",
-    "location": "Remote",
-    "city": "",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/netlify/jobs/8643850002",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-redcellpartners-5195297007",
@@ -459,7 +669,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-stripe-8031782",
@@ -473,7 +683,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-tatari-8652421002",
@@ -487,7 +697,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-kin-ff6b1a90-1055-41e1-8748-3288d58f53c5",
@@ -501,7 +711,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-meridianlink-17b3e1cf-f668-4409-8b2d-f9a9d5d1bb36",
@@ -515,7 +725,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-savvy-e3c243e2-a35c-4786-95ee-f3ffb3b63e14",
@@ -529,7 +739,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-savvy-e01cacb3-6870-479a-85a9-99109278b5f2",
@@ -543,7 +753,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-27",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-mqreferrals-8052471",
@@ -557,7 +767,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-25",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-symbiotic-ffc40ecb-169d-4027-bd5b-326e5710b897",
@@ -571,21 +781,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-25",
-    "scraped": "2026-08-03"
-  },
-  {
-    "id": "gh-fundraiseup-4708163005",
-    "title": "Senior Product Designer",
-    "company": "fundraiseup",
-    "companyUrl": "https://boards.greenhouse.io/fundraiseup",
-    "location": "Georgia - Remote",
-    "city": "Georgia - Remote",
-    "remote": true,
-    "url": "https://fundraiseup.com/careers/4708163005/?gh_jid=4708163005",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-gatherai-5176171007",
@@ -599,7 +795,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-mercury-6001908004",
@@ -613,7 +809,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-mercury-5843845004",
@@ -627,7 +823,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-mercury-6099697004",
@@ -641,7 +837,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-twilio-7985808",
@@ -655,7 +851,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-kong-9ef0f069-1d5e-4bcd-9c16-359e11456a12",
@@ -669,7 +865,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-lumaai-5deeb9f6-7af7-4c26-9da3-fd8d1245d4dc",
@@ -683,21 +879,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-24",
-    "scraped": "2026-08-03"
-  },
-  {
-    "id": "gh-alphasense-8530664002",
-    "title": "Senior/Staff Product Designer",
-    "company": "alphasense",
-    "companyUrl": "https://boards.greenhouse.io/alphasense",
-    "location": "New York, New York, United States; Remote - United States",
-    "city": "New York",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/alphasense/jobs/8530664002",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-07-23",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-honehealth-5012059008",
@@ -711,7 +893,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-23",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-honehealth-5043164008",
@@ -725,7 +907,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-23",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-novacredit-4037122009",
@@ -739,7 +921,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-23",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-hirehire-c868d564-8608-446e-bd9e-25f7bc8e77a2",
@@ -753,7 +935,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-23",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-horizon3ai-71962aad-4e04-4d84-b374-2dd99491f238",
@@ -767,7 +949,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-23",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-affirm-7799295003",
@@ -781,7 +963,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-22",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-afresh-6114148004",
@@ -795,7 +977,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-22",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-bjakcareer-3dfde650-4e74-4668-b190-6c832dd10797",
@@ -809,7 +991,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-22",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-plaud-3f58500a-2f40-40c3-bf0e-cbf714f05ee4",
@@ -823,7 +1005,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-22",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-supabase-97fe8e68-28c5-42db-a763-60113f0b31fd",
@@ -837,7 +1019,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-22",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-evolvevacationrental-7723988003",
@@ -851,21 +1033,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-21",
-    "scraped": "2026-08-03"
-  },
-  {
-    "id": "gh-hs-8022335",
-    "title": "Staff AI Product Designer",
-    "company": "hs",
-    "companyUrl": "https://boards.greenhouse.io/hs",
-    "location": "Remote - United States; San Francisco - Hybrid",
-    "city": "United States; San Francisco - Hybrid",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/hs/jobs/8022335",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-07-21",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "gh-thatch-5136655008",
@@ -879,7 +1047,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-07-21",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "lv-raya-813c5847-01ca-4cf4-94d8-8ed26dd954c6",
@@ -893,7 +1061,7 @@
     "platform": "lever",
     "roleType": "product_design",
     "posted": "2026-07-21",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-middesk-c7f766eb-2824-4096-ba8f-67feeb9c0d90",
@@ -907,7 +1075,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-21",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   },
   {
     "id": "ab-vetcove-a8a71439-9f82-4727-9393-f0f97e6752b7",
@@ -921,20 +1089,6 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-07-21",
-    "scraped": "2026-08-03"
-  },
-  {
-    "id": "ab-unify-36851a2d-240f-4220-b97f-9a4ada907d29",
-    "title": "Staff Product Designer ",
-    "company": "unify",
-    "companyUrl": "https://jobs.ashbyhq.com/unify",
-    "location": "San Francisco Office",
-    "city": "San Francisco Office",
-    "remote": true,
-    "url": "https://jobs.ashbyhq.com/unify/36851a2d-240f-4220-b97f-9a4ada907d29",
-    "platform": "ashby",
-    "roleType": "product_design",
-    "posted": "2026-07-20",
-    "scraped": "2026-08-03"
+    "scraped": "2026-08-04"
   }
 ]
