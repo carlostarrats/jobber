@@ -1,5 +1,19 @@
 [
   {
+    "id": "ab-deepgram-821b1ba2-02fe-47cb-907a-39214e0f2fe0",
+    "title": "Staff Product Designer, Conversational AI",
+    "company": "deepgram",
+    "companyUrl": "https://jobs.ashbyhq.com/deepgram",
+    "location": "San Francisco, CA",
+    "city": "San Francisco",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/deepgram/821b1ba2-02fe-47cb-907a-39214e0f2fe0",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-09-19",
+    "scraped": "2026-09-20"
+  },
+  {
     "id": "gh-consensys-8202750",
     "title": "Lead Product Designer",
     "company": "consensys",
@@ -11,7 +25,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-engine-7734784003",
@@ -25,7 +39,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-engine-7695468003",
@@ -39,7 +53,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-ethoslife-8631379002",
@@ -53,7 +67,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-ngrokinc-6133638004",
@@ -67,7 +81,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-orcristtechnologies-4963154101",
@@ -81,7 +95,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-twitch-8635691002",
@@ -95,7 +109,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-webflow-8213629",
@@ -109,7 +123,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-honeydew-ca9579e4-3284-4b70-a61c-30d2aca63e13",
@@ -123,7 +137,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-kin-e9d0c9b7-0a62-4dd5-bf8f-34bcf4312f94",
@@ -137,7 +151,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-mystenlabs-b83dab9a-e925-4628-aaca-4caa122d4d73",
@@ -151,7 +165,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-vanta-0e154a57-fc33-4cf7-95cc-0aa30e0bde90",
@@ -165,7 +179,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-versemedical-49a8c599-ae93-4568-af58-36075d75f735",
@@ -179,7 +193,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gm-fetch-am9icG9zdDp81yZl_QzazJYqs9e4SD98",
@@ -193,7 +207,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-gemini-7811967",
@@ -207,7 +221,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-oura-4396652009",
@@ -221,7 +235,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-pinterest-7638599",
@@ -235,7 +249,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-squarespace-8205257",
@@ -249,7 +263,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-twinhealth-6181143004",
@@ -263,7 +277,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-handshake-cfce596f-d7be-4703-bcbe-6d8c94643dc3",
@@ -277,7 +291,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-datavant2-5365997008",
@@ -291,7 +305,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-elationhealth-8014971",
@@ -305,7 +319,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-kettle-8639414002",
@@ -319,7 +333,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-nex-5166369008",
@@ -333,7 +347,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-pinterest-8123052",
@@ -347,7 +361,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-realchemistry-5423576008",
@@ -361,7 +375,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-sagansystems-8208190",
@@ -375,7 +389,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-samsara-8007939",
@@ -389,7 +403,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-sparkadvisors-5426374008",
@@ -403,7 +417,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-arketa-2df86a89-8e45-4e9b-b21a-b72063500bb2",
@@ -417,7 +431,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-novo-fd1784dd-4d3c-4771-9af8-89c575be7647",
@@ -431,7 +445,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-patreon-da2d339e-a2db-446c-a507-98da926c279c",
@@ -445,7 +459,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-securityscorecard-8039043",
@@ -459,7 +473,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-magiceden-32fff02e-df64-43c2-a087-01292aa4cf5d",
@@ -473,7 +487,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-siro-67aea001-ec2b-4123-ba17-a05dff653eb9",
@@ -487,7 +501,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gm-fetch-am9icG9zdDpIpsIKbscxMD3hFZ9QBI4W",
@@ -501,7 +515,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-coinbase-8014564",
@@ -515,7 +529,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-constantcontact-8174104",
@@ -529,7 +543,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-oscar-8106999",
@@ -543,7 +557,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-oscar-7681404",
@@ -557,7 +571,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-smartsheet-8191836",
@@ -571,7 +585,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "lv-myollie-3cfb5126-808b-4e01-ab11-e87450796eef",
@@ -585,7 +599,7 @@
     "platform": "lever",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-hirehire-6233ccc3-4ea9-42fe-85be-917208500f33",
@@ -599,7 +613,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-wrapbook-c199c9b0-27fe-4b7a-a041-faa7148bfb8c",
@@ -613,7 +627,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-talkspace-6182572004",
@@ -627,7 +641,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-13",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-seatgeek-8198016",
@@ -641,7 +655,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-11",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gm-linktree-am9icG9zdDoXDmUguXLXPugI0j61OFcz",
@@ -655,7 +669,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-11",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gm-linktree-am9icG9zdDrWxzzbVFqGbDibd9TQp5qf",
@@ -669,7 +683,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-11",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-gatherai-5176171007",
@@ -683,7 +697,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-instacart-8191763",
@@ -697,7 +711,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-otter-8783008002",
@@ -711,7 +725,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-stripe-8031782",
@@ -725,7 +739,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-apollo-graphql-f061c434-3b6d-474f-a4d6-01f6a5bddbe1",
@@ -739,7 +753,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-openai-43ba8b53-4643-4544-bb21-f13efe99e0a0",
@@ -753,7 +767,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-openai-4342be72-0ec4-42b2-962a-6e7ca06b7070",
@@ -767,7 +781,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-openai-2ace6bbe-a7ac-4930-bcdc-14c618179b1f",
@@ -781,7 +795,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-cribl-6181112004",
@@ -795,7 +809,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-09",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-life360-8790900002",
@@ -809,7 +823,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-09",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-bestow-e041b982-ad20-41e3-acec-223a3bb189f4",
@@ -823,7 +837,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-09",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-arizeai-5790042004",
@@ -837,7 +851,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "gh-instacart-8160008",
@@ -851,7 +865,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-nash-f3ab1bcb-4497-49c8-bdbb-d09776c2392f",
@@ -865,7 +879,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-strella-985e4309-5346-47f4-9c9d-1e0a435cbbee",
@@ -879,7 +893,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-zip-c6307162-44d9-47f3-a147-3adb39adc970",
@@ -893,7 +907,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-zip-0dbaa0d7-838c-40a0-8bfd-fbce2a48446f",
@@ -907,7 +921,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-zip-39fb82c3-90bf-4fe2-b779-9a06ae3d3c99",
@@ -921,7 +935,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-zip-b138aa15-0197-4da3-bd86-b6636285d935",
@@ -935,7 +949,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   },
   {
     "id": "ab-zip-2126ee19-3f24-42ff-99c4-b5d37db85806",
@@ -949,6 +963,6 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-08",
-    "scraped": "2026-09-19"
+    "scraped": "2026-09-20"
   }
 ]
