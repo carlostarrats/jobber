@@ -1,5 +1,61 @@
 [
   {
+    "id": "gh-arizeai-5790042004",
+    "title": "UX Designer",
+    "company": "arizeai",
+    "companyUrl": "https://boards.greenhouse.io/arizeai",
+    "location": "Remote (United States)",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/arizeai/jobs/5790042004",
+    "platform": "greenhouse",
+    "roleType": "ux_design",
+    "posted": "2026-09-23",
+    "scraped": "2026-09-24"
+  },
+  {
+    "id": "gh-heygen-5246252007",
+    "title": "Product Designer - Web",
+    "company": "heygen",
+    "companyUrl": "https://boards.greenhouse.io/heygen",
+    "location": "Los Angeles",
+    "city": "Los Angeles",
+    "remote": false,
+    "url": "https://job-boards.greenhouse.io/heygen/jobs/5246252007",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-09-23",
+    "scraped": "2026-09-24"
+  },
+  {
+    "id": "gh-medium-4415431009",
+    "title": "Staff Product Designer",
+    "company": "medium",
+    "companyUrl": "https://boards.greenhouse.io/medium",
+    "location": "Remote - US",
+    "city": "US",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/medium/jobs/4415431009",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-09-23",
+    "scraped": "2026-09-24"
+  },
+  {
+    "id": "gh-nationalpublicradioinc-4730988005",
+    "title": "Senior Product Designer, Growth and Conversion",
+    "company": "nationalpublicradioinc",
+    "companyUrl": "https://boards.greenhouse.io/nationalpublicradioinc",
+    "location": "Remote",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/nationalpublicradioinc/jobs/4730988005",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-09-23",
+    "scraped": "2026-09-24"
+  },
+  {
     "id": "gh-nex-5166369008",
     "title": "Senior Product Designer",
     "company": "nex",
@@ -11,7 +67,21 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-23",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
+  },
+  {
+    "id": "gh-samsara-8007939",
+    "title": "Lead Product Designer",
+    "company": "samsara",
+    "companyUrl": "https://boards.greenhouse.io/samsara",
+    "location": "Remote - US",
+    "city": "US",
+    "remote": true,
+    "url": "https://www.samsara.com/company/careers/roles/8007939?gh_jid=8007939",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-09-23",
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-d3-5430475008",
@@ -25,7 +95,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-defenseunicorns-5246245007",
@@ -39,7 +109,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-disco-8675206002",
@@ -53,7 +123,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-life360-8790900002",
@@ -67,21 +137,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
-  },
-  {
-    "id": "gh-medium-4415431009",
-    "title": "Staff Product Designer",
-    "company": "medium",
-    "companyUrl": "https://boards.greenhouse.io/medium",
-    "location": "Remote - US",
-    "city": "US",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/medium/jobs/4415431009",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-otter-8783008002",
@@ -95,7 +151,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-oura-4396652009",
@@ -109,7 +165,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-route-8002690003",
@@ -123,7 +179,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-buildout-78669d73-9735-479b-b84a-a3b199970396",
@@ -137,7 +193,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-join9am-d4179eae-ae0f-46b8-a15e-c9e85b6d58d2",
@@ -151,7 +207,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-tilthq-b8ebe51e-5120-4d54-a451-1a8dccb25387",
@@ -165,21 +221,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-22",
-    "scraped": "2026-09-23"
-  },
-  {
-    "id": "gh-datavant2-5365997008",
-    "title": "Senior Product Designer",
-    "company": "datavant2",
-    "companyUrl": "https://boards.greenhouse.io/datavant2",
-    "location": "Remote - United States",
-    "city": "United States",
-    "remote": true,
-    "url": "https://www.datavant.com/about/careers/open-roles/job?gh_jid=5365997008",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-goodr-8827826002",
@@ -193,7 +235,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-instridehealth-4736298005",
@@ -207,7 +249,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-smartsheet-8191836",
@@ -221,7 +263,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-twinhealth-6181143004",
@@ -235,7 +277,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-clera-bb75972c-af70-499c-9784-3925924846a5",
@@ -249,7 +291,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-popl-c1a5f4d7-1fe9-41a1-baf5-602b6ebb576d",
@@ -263,7 +305,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-21",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-deepgram-821b1ba2-02fe-47cb-907a-39214e0f2fe0",
@@ -277,7 +319,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-19",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-consensys-8202750",
@@ -291,7 +333,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-engine-7734784003",
@@ -305,7 +347,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-engine-7695468003",
@@ -319,7 +361,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-ethoslife-8631379002",
@@ -333,7 +375,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-ngrokinc-6133638004",
@@ -347,7 +389,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-orcristtechnologies-4963154101",
@@ -361,7 +403,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-twitch-8635691002",
@@ -375,7 +417,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-webflow-8213629",
@@ -389,7 +431,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-honeydew-ca9579e4-3284-4b70-a61c-30d2aca63e13",
@@ -403,7 +445,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-kin-e9d0c9b7-0a62-4dd5-bf8f-34bcf4312f94",
@@ -417,7 +459,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-mystenlabs-b83dab9a-e925-4628-aaca-4caa122d4d73",
@@ -431,7 +473,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-vanta-0e154a57-fc33-4cf7-95cc-0aa30e0bde90",
@@ -445,7 +487,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-versemedical-49a8c599-ae93-4568-af58-36075d75f735",
@@ -459,21 +501,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-18",
-    "scraped": "2026-09-23"
-  },
-  {
-    "id": "gm-fetch-am9icG9zdDp81yZl_QzazJYqs9e4SD98",
-    "title": "Senior Product Designer, Earning Experience",
-    "company": "fetch",
-    "companyUrl": "https://jobs.gem.com/fetch",
-    "location": "United States - Remote",
-    "city": "United States - Remote",
-    "remote": true,
-    "url": "https://jobs.gem.com/fetch/am9icG9zdDp81yZl_QzazJYqs9e4SD98",
-    "platform": "gem",
-    "roleType": "product_design",
-    "posted": "2026-09-18",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-gemini-7811967",
@@ -487,7 +515,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-pinterest-7638599",
@@ -501,7 +529,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-squarespace-8205257",
@@ -515,7 +543,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-handshake-cfce596f-d7be-4703-bcbe-6d8c94643dc3",
@@ -529,7 +557,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-17",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-elationhealth-8014971",
@@ -543,7 +571,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-kettle-8639414002",
@@ -557,7 +585,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-pinterest-8123052",
@@ -571,7 +599,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-realchemistry-5423576008",
@@ -585,7 +613,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-sagansystems-8208190",
@@ -599,21 +627,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
-  },
-  {
-    "id": "gh-samsara-8007939",
-    "title": "Lead Product Designer",
-    "company": "samsara",
-    "companyUrl": "https://boards.greenhouse.io/samsara",
-    "location": "Remote - US",
-    "city": "US",
-    "remote": true,
-    "url": "https://www.samsara.com/company/careers/roles/8007939?gh_jid=8007939",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-sparkadvisors-5426374008",
@@ -627,7 +641,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-arketa-2df86a89-8e45-4e9b-b21a-b72063500bb2",
@@ -641,7 +655,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-novo-fd1784dd-4d3c-4771-9af8-89c575be7647",
@@ -655,7 +669,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-patreon-da2d339e-a2db-446c-a507-98da926c279c",
@@ -669,7 +683,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-16",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-securityscorecard-8039043",
@@ -683,7 +697,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-magiceden-32fff02e-df64-43c2-a087-01292aa4cf5d",
@@ -697,7 +711,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-siro-67aea001-ec2b-4123-ba17-a05dff653eb9",
@@ -711,7 +725,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gm-fetch-am9icG9zdDpIpsIKbscxMD3hFZ9QBI4W",
@@ -725,7 +739,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-15",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-coinbase-8014564",
@@ -739,7 +753,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-constantcontact-8174104",
@@ -753,7 +767,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-oscar-8106999",
@@ -767,7 +781,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-oscar-7681404",
@@ -781,7 +795,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "lv-myollie-3cfb5126-808b-4e01-ab11-e87450796eef",
@@ -795,7 +809,7 @@
     "platform": "lever",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-hirehire-6233ccc3-4ea9-42fe-85be-917208500f33",
@@ -809,7 +823,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-wrapbook-c199c9b0-27fe-4b7a-a041-faa7148bfb8c",
@@ -823,7 +837,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-14",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-talkspace-6182572004",
@@ -837,7 +851,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-13",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-seatgeek-8198016",
@@ -851,7 +865,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-11",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gm-linktree-am9icG9zdDoXDmUguXLXPugI0j61OFcz",
@@ -865,7 +879,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-11",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gm-linktree-am9icG9zdDrWxzzbVFqGbDibd9TQp5qf",
@@ -879,7 +893,7 @@
     "platform": "gem",
     "roleType": "product_design",
     "posted": "2026-09-11",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-gatherai-5176171007",
@@ -893,7 +907,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-instacart-8191763",
@@ -907,7 +921,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "gh-stripe-8031782",
@@ -921,7 +935,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-apollo-graphql-f061c434-3b6d-474f-a4d6-01f6a5bddbe1",
@@ -935,7 +949,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-openai-43ba8b53-4643-4544-bb21-f13efe99e0a0",
@@ -949,7 +963,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-openai-4342be72-0ec4-42b2-962a-6e7ca06b7070",
@@ -963,7 +977,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   },
   {
     "id": "ab-openai-2ace6bbe-a7ac-4930-bcdc-14c618179b1f",
@@ -977,34 +991,6 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-09-10",
-    "scraped": "2026-09-23"
-  },
-  {
-    "id": "gh-cribl-6181112004",
-    "title": "Sr. UX Designer, Security",
-    "company": "cribl",
-    "companyUrl": "https://boards.greenhouse.io/cribl",
-    "location": "Remote - United States",
-    "city": "United States",
-    "remote": true,
-    "url": "https://cribl.io/job-detail/?gh_jid=6181112004",
-    "platform": "greenhouse",
-    "roleType": "ux_design",
-    "posted": "2026-09-09",
-    "scraped": "2026-09-23"
-  },
-  {
-    "id": "ab-bestow-e041b982-ad20-41e3-acec-223a3bb189f4",
-    "title": "Product Designer II, Agent Experience",
-    "company": "bestow",
-    "companyUrl": "https://jobs.ashbyhq.com/bestow",
-    "location": "Remote, US",
-    "city": "",
-    "remote": true,
-    "url": "https://jobs.ashbyhq.com/bestow/e041b982-ad20-41e3-acec-223a3bb189f4",
-    "platform": "ashby",
-    "roleType": "product_design",
-    "posted": "2026-09-09",
-    "scraped": "2026-09-23"
+    "scraped": "2026-09-24"
   }
 ]
