@@ -1,5 +1,47 @@
 [
   {
+    "id": "ab-coder-70d874fd-974b-4e27-a48c-07862c491a70",
+    "title": "Senior Product Designer",
+    "company": "coder",
+    "companyUrl": "https://jobs.ashbyhq.com/coder",
+    "location": "United States",
+    "city": "United States",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/coder/70d874fd-974b-4e27-a48c-07862c491a70",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-11-12",
+    "scraped": "2026-11-12"
+  },
+  {
+    "id": "ab-obviant-d8f49180-df9e-4577-8bb8-2a78c953fc21",
+    "title": "Senior Product Designer",
+    "company": "obviant",
+    "companyUrl": "https://jobs.ashbyhq.com/obviant",
+    "location": "Arlington",
+    "city": "Arlington",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/obviant/d8f49180-df9e-4577-8bb8-2a78c953fc21",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-11-12",
+    "scraped": "2026-11-12"
+  },
+  {
+    "id": "gh-nflcareers-5475083008",
+    "title": "Seasonal Product Designer",
+    "company": "nflcareers",
+    "companyUrl": "https://boards.greenhouse.io/nflcareers",
+    "location": "Inglewood, California, United States",
+    "city": "Inglewood",
+    "remote": false,
+    "url": "https://job-boards.greenhouse.io/nflcareers/jobs/5475083008",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-11-11",
+    "scraped": "2026-11-12"
+  },
+  {
     "id": "gh-bungie-6212202004",
     "title": "Senior UX Designer (CONTRACT) ",
     "company": "bungie",
@@ -11,7 +53,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-gatherai-5176171007",
@@ -25,7 +67,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-life360-8790900002",
@@ -39,7 +81,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-securityscorecard-8039043",
@@ -53,7 +95,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-bjakcareer-3dfde650-4e74-4668-b190-6c832dd10797",
@@ -67,7 +109,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-air-4472587009",
@@ -81,7 +123,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-coinbase-8114474",
@@ -95,7 +137,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-elationhealth-8014971",
@@ -109,7 +151,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-mavenclinic-8599242002",
@@ -123,7 +165,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-nflcareers-5475915008",
@@ -137,7 +179,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-turtlerockstudios-4752042005",
@@ -151,7 +193,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-oneapp-750141de-bf2a-4794-963c-28ed52a85e3a",
@@ -165,7 +207,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-phantom-0844373f-aecc-4290-bd1e-159d15b29ae2",
@@ -179,7 +221,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-cresta-5173681008",
@@ -193,7 +235,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-defcon-5287684007",
@@ -207,7 +249,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-evolvevacationrental-8197766003",
@@ -221,7 +263,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-excella-4751867005",
@@ -235,7 +277,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-medium-4484248009",
@@ -249,7 +291,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-oscar-7681404",
@@ -263,7 +305,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-pinterest-8249279",
@@ -277,7 +319,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-redcellpartners-5287731007",
@@ -291,7 +333,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-reddit-8201913",
@@ -305,7 +347,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-samsara-8358687",
@@ -319,7 +361,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-samsara-8358690",
@@ -333,7 +375,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-wikimedia-8319366",
@@ -347,7 +389,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-benchling-4c4187c8-b367-4aff-bfc4-3946d94f8210",
@@ -361,7 +403,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-bjakcareer-5c1813c0-6ea1-4b0a-b0f5-1616dfa66f67",
@@ -375,7 +417,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-bjakcareer-74f7575f-9515-4b5c-a75f-39f08050a40c",
@@ -389,7 +431,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-bjakcareer-fb92928d-a488-4073-a340-b7cf3b85f4aa",
@@ -403,7 +445,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-bjakcareer-5135ab14-2876-4015-8bb1-5eed6e102b45",
@@ -417,7 +459,7 @@
     "platform": "ashby",
     "roleType": "ux_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-canals-b75f3745-9d7c-4dfb-a559-2a1f3118ac14",
@@ -431,7 +473,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-clera-ccfd7f86-64c9-4bb9-9f44-12a3b385a122",
@@ -445,7 +487,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-06",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-clearstreet-8241303",
@@ -459,7 +501,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-clearstreet-8241353",
@@ -473,7 +515,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-clearstreet-8241344",
@@ -487,7 +529,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-evolvevacationrental-8035010003",
@@ -501,7 +543,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-grafanalabs-6146091004",
@@ -515,7 +557,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-redcellpartners-5195297007",
@@ -529,7 +571,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-thenewyorktimes-4749868005",
@@ -543,7 +585,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-wavemm1-6238979004",
@@ -557,7 +599,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-arb-interactive-c48514f7-7476-4d5d-bab8-6d776a6caf3a",
@@ -571,7 +613,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-kaizenlabs-18c74aa5-639c-466f-9c8e-c2d95320993f",
@@ -585,7 +627,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-05",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-nex-5166369008",
@@ -599,7 +641,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-04",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-bjakcareer-4cada5a2-dd75-46ae-b596-241183b9267b",
@@ -613,7 +655,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-04",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-hungryroot-6242253004",
@@ -627,7 +669,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-03",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-sparkadvisors-5426374008",
@@ -641,7 +683,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-03",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-twinhealth-6020240004",
@@ -655,7 +697,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-03",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-constantcontact-8174104",
@@ -669,7 +711,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-02",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-otter-8783008002",
@@ -683,7 +725,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-02",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-openart-ab64410e-dd01-47b7-8484-ec6b58e43d30",
@@ -697,7 +739,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-02",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-openart-e4fb6d12-c3ba-44ca-ab25-a39ae5fd8d04",
@@ -711,7 +753,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-02",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-openart-ad6bb69e-9dbd-4489-b62f-5c05a0faa063",
@@ -725,7 +767,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-02",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-figure-8841922002",
@@ -739,7 +781,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-01",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-coinbase-8301285",
@@ -753,7 +795,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-coinbase-8280149",
@@ -767,7 +809,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-future-4683185005",
@@ -781,7 +823,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-instacart-8191763",
@@ -795,7 +837,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-tailscale-4726090005",
@@ -809,7 +851,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-thenewyorktimes-4726229005",
@@ -823,7 +865,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-twitch-8635691002",
@@ -837,7 +879,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-wealthsimple-70c7af08-e836-4719-8d11-3d64ce125bab",
@@ -851,7 +893,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-10-30",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-calm-8924756002",
@@ -865,7 +907,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-d3-5430475008",
@@ -879,7 +921,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-stripe-8282390",
@@ -893,7 +935,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "gh-stripe-8031782",
@@ -907,7 +949,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-clerk-7635ac5c-bb36-48aa-a572-e467eb9ab429",
@@ -921,7 +963,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-harvey-e46cea47-7901-4b8d-ad80-ec31223fefed",
@@ -935,7 +977,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-harvey-8d357b3f-43e0-4e30-8dd7-a326a5da96cc",
@@ -949,7 +991,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   },
   {
     "id": "ab-livekit-0684ae7c-4fd5-411e-a10c-3773e584cd97",
@@ -963,48 +1005,6 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-10-29",
-    "scraped": "2026-11-11"
-  },
-  {
-    "id": "gh-mercury-6143552004",
-    "title": "Senior Product Designer - Cards & Credit",
-    "company": "mercury",
-    "companyUrl": "https://boards.greenhouse.io/mercury",
-    "location": "San Francisco, CA, New York, NY, Portland, OR, or Remote within Canada or United States",
-    "city": "San Francisco",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/mercury/jobs/6143552004",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-10-28",
-    "scraped": "2026-11-11"
-  },
-  {
-    "id": "gh-warp-6237969004",
-    "title": "Product Designer",
-    "company": "warp",
-    "companyUrl": "https://boards.greenhouse.io/warp",
-    "location": "Remote within US and Canada",
-    "city": "Remote within US and Canada",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/warp/jobs/6237969004",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-10-28",
-    "scraped": "2026-11-11"
-  },
-  {
-    "id": "ab-vanta-7d9922bb-2d0e-4833-bc4e-df65dc57d232",
-    "title": "Staff Product Designer, Activation",
-    "company": "vanta",
-    "companyUrl": "https://jobs.ashbyhq.com/vanta",
-    "location": "Remote U.S.",
-    "city": "Remote U.S.",
-    "remote": true,
-    "url": "https://jobs.ashbyhq.com/vanta/7d9922bb-2d0e-4833-bc4e-df65dc57d232",
-    "platform": "ashby",
-    "roleType": "product_design",
-    "posted": "2026-10-28",
-    "scraped": "2026-11-11"
+    "scraped": "2026-11-12"
   }
 ]
