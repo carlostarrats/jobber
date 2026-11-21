@@ -1,5 +1,75 @@
 [
   {
+    "id": "gh-oscar-7681404",
+    "title": "Product Designer",
+    "company": "oscar",
+    "companyUrl": "https://boards.greenhouse.io/oscar",
+    "location": "Los Angeles, California, United States",
+    "city": "Los Angeles",
+    "remote": false,
+    "url": "https://oscarhealth.com/careers/jobs?gh_jid=7681404",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-11-21",
+    "scraped": "2026-11-21"
+  },
+  {
+    "id": "ab-tilthq-df39a058-5fbd-4aab-b17a-2f4d814e38ae",
+    "title": "Staff Product Designer",
+    "company": "tilthq",
+    "companyUrl": "https://jobs.ashbyhq.com/tilthq",
+    "location": "Remote - US",
+    "city": "US",
+    "remote": true,
+    "url": "https://jobs.ashbyhq.com/tilthq/df39a058-5fbd-4aab-b17a-2f4d814e38ae",
+    "platform": "ashby",
+    "roleType": "product_design",
+    "posted": "2026-11-21",
+    "scraped": "2026-11-21"
+  },
+  {
+    "id": "gh-candidly-5298867007",
+    "title": "Senior Product Designer",
+    "company": "candidly",
+    "companyUrl": "https://boards.greenhouse.io/candidly",
+    "location": "Remote - USA",
+    "city": "USA",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/candidly/jobs/5298867007",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-11-20",
+    "scraped": "2026-11-21"
+  },
+  {
+    "id": "gh-tailscale-4757463005",
+    "title": "Product Designer, Docs & Learning",
+    "company": "tailscale",
+    "companyUrl": "https://boards.greenhouse.io/tailscale",
+    "location": "Remote (United States)",
+    "city": "",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/tailscale/jobs/4757463005",
+    "platform": "greenhouse",
+    "roleType": "product_design",
+    "posted": "2026-11-20",
+    "scraped": "2026-11-21"
+  },
+  {
+    "id": "gh-teamlfg-6265859004",
+    "title": "Principal UX Designer",
+    "company": "teamlfg",
+    "companyUrl": "https://boards.greenhouse.io/teamlfg",
+    "location": "United States, Remote",
+    "city": "United States",
+    "remote": true,
+    "url": "https://job-boards.greenhouse.io/teamlfg/jobs/6265859004",
+    "platform": "greenhouse",
+    "roleType": "ux_design",
+    "posted": "2026-11-20",
+    "scraped": "2026-11-21"
+  },
+  {
     "id": "gh-figure-8841922002",
     "title": "Principal Product Designer",
     "company": "figure",
@@ -11,7 +81,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-19",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-stripe-8282390",
@@ -25,7 +95,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-19",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-stripe-8031782",
@@ -39,7 +109,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-19",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-thrivemarket-4436311009",
@@ -53,7 +123,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-19",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-openai-919b3666-14c2-4c70-b28c-7a49fedc418e",
@@ -67,7 +137,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-19",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-billtrust-8208260003",
@@ -81,7 +151,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-coinbase-8397873",
@@ -95,7 +165,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-otter-8783008002",
@@ -109,21 +179,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-teamlfg-6265859004",
-    "title": "Principal UX Designer",
-    "company": "teamlfg",
-    "companyUrl": "https://boards.greenhouse.io/teamlfg",
-    "location": "United States, Remote",
-    "city": "United States",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/teamlfg/jobs/6265859004",
-    "platform": "greenhouse",
-    "roleType": "ux_design",
-    "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-thenewyorktimes-4755063005",
@@ -137,7 +193,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-twilio-8310632",
@@ -151,7 +207,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "lv-alltrails-94bad835-d7a3-4c41-b159-ee63f4818e01",
@@ -165,7 +221,7 @@
     "platform": "lever",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-bjakcareer-3dfde650-4e74-4668-b190-6c832dd10797",
@@ -179,7 +235,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-clipboard-a321f456-4d07-4311-a6f0-9faef9a945fc",
@@ -193,7 +249,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-pebl-d3a352fe-3ad7-4383-b64a-9b487ab7571b",
@@ -207,7 +263,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-prophet-security-11f278b2-fa82-419c-9464-88c5e366f733",
@@ -221,7 +277,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-stepful-529eaa18-2031-45e0-b4c7-9c2b60ae58b2",
@@ -235,21 +291,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-18",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-candidly-5298867007",
-    "title": "Senior Product Designer",
-    "company": "candidly",
-    "companyUrl": "https://boards.greenhouse.io/candidly",
-    "location": "Remote - USA",
-    "city": "USA",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/candidly/jobs/5298867007",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-17",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-nex-5166369008",
@@ -263,7 +305,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-17",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-defcon-5287684007",
@@ -277,7 +319,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-evolvevacationrental-8197766003",
@@ -291,7 +333,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-instacart-8394152",
@@ -305,35 +347,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-nflcareers-5475083008",
-    "title": "Seasonal Product Designer",
-    "company": "nflcareers",
-    "companyUrl": "https://boards.greenhouse.io/nflcareers",
-    "location": "Inglewood, California, United States",
-    "city": "Inglewood",
-    "remote": false,
-    "url": "https://job-boards.greenhouse.io/nflcareers/jobs/5475083008",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-16",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-nflcareers-5475915008",
-    "title": "Seasonal Senior Product Designer ",
-    "company": "nflcareers",
-    "companyUrl": "https://boards.greenhouse.io/nflcareers",
-    "location": "Inglewood, California, United States",
-    "city": "Inglewood",
-    "remote": false,
-    "url": "https://job-boards.greenhouse.io/nflcareers/jobs/5475915008",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-redcellpartners-5287731007",
@@ -347,7 +361,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-redcellpartners-5195297007",
@@ -361,7 +375,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-tebra-4751287005",
@@ -375,7 +389,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-rocketsciencegg-c64ba79d-11ba-49d3-ad06-066aa697cf64",
@@ -389,7 +403,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-16",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-air-4472587009",
@@ -403,7 +417,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-13",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-clearstreet-8241353",
@@ -417,7 +431,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-13",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-clearstreet-8241344",
@@ -431,7 +445,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-13",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-cloverhealth-8236764",
@@ -445,7 +459,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-13",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-twinhealth-6020240004",
@@ -459,7 +473,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-13",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-koalafi-6255384004",
@@ -473,7 +487,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-coder-70d874fd-974b-4e27-a48c-07862c491a70",
@@ -487,7 +501,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-obviant-d8f49180-df9e-4577-8bb8-2a78c953fc21",
@@ -501,7 +515,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-openai-8e754a28-926e-40f9-b33d-6e2b838ef5dd",
@@ -515,7 +529,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-perplexity-1354f2e8-56c8-4a66-81f8-eb5d5b944506",
@@ -529,7 +543,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-perplexity-14a45e74-9cde-4622-8172-1b6968810802",
@@ -543,7 +557,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-speak-acd2ee6d-7b7b-48b9-a01e-33e0fc59637e",
@@ -557,7 +571,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-zip-b138aa15-0197-4da3-bd86-b6636285d935",
@@ -571,21 +585,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-12",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-bungie-6212202004",
-    "title": "Senior UX Designer (CONTRACT) ",
-    "company": "bungie",
-    "companyUrl": "https://boards.greenhouse.io/bungie",
-    "location": "United States, Remote",
-    "city": "United States",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/bungie/jobs/6212202004",
-    "platform": "greenhouse",
-    "roleType": "ux_design",
-    "posted": "2026-11-10",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-gatherai-5176171007",
@@ -599,7 +599,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-life360-8790900002",
@@ -613,7 +613,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-securityscorecard-8039043",
@@ -627,7 +627,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-10",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-coinbase-8114474",
@@ -641,7 +641,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-elationhealth-8014971",
@@ -655,7 +655,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-mavenclinic-8599242002",
@@ -669,7 +669,7 @@
     "platform": "greenhouse",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "gh-turtlerockstudios-4752042005",
@@ -683,7 +683,7 @@
     "platform": "greenhouse",
     "roleType": "ux_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-oneapp-750141de-bf2a-4794-963c-28ed52a85e3a",
@@ -697,7 +697,7 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   },
   {
     "id": "ab-phantom-0844373f-aecc-4290-bd1e-159d15b29ae2",
@@ -711,146 +711,6 @@
     "platform": "ashby",
     "roleType": "product_design",
     "posted": "2026-11-09",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-excella-4751867005",
-    "title": "Senior UX Designer",
-    "company": "excella",
-    "companyUrl": "https://boards.greenhouse.io/excella",
-    "location": "Arlington, Virginia, United States, Remote",
-    "city": "Arlington",
-    "remote": true,
-    "url": "https://www.excella.com/careers/apply/?gh_jid=4751867005",
-    "platform": "greenhouse",
-    "roleType": "ux_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-medium-4484248009",
-    "title": "Senior Product Designer",
-    "company": "medium",
-    "companyUrl": "https://boards.greenhouse.io/medium",
-    "location": "Remote - US",
-    "city": "US",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/medium/jobs/4484248009",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-oscar-7681404",
-    "title": "Senior Product Designer",
-    "company": "oscar",
-    "companyUrl": "https://boards.greenhouse.io/oscar",
-    "location": "Los Angeles, California, United States",
-    "city": "Los Angeles",
-    "remote": false,
-    "url": "https://oscarhealth.com/careers/jobs?gh_jid=7681404",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-pinterest-8249279",
-    "title": "Sr. Product Designer - Measurement, Data, & AI",
-    "company": "pinterest",
-    "companyUrl": "https://boards.greenhouse.io/pinterest",
-    "location": "San Francisco, CA, US; Remote, US",
-    "city": "San Francisco",
-    "remote": true,
-    "url": "https://www.pinterestcareers.com/jobs/?gh_jid=8249279",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-reddit-8201913",
-    "title": "Senior Product Designer, Ads",
-    "company": "reddit",
-    "companyUrl": "https://boards.greenhouse.io/reddit",
-    "location": "Remote - United States",
-    "city": "United States",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/reddit/jobs/8201913",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-samsara-8358687",
-    "title": "Lead Product Designer",
-    "company": "samsara",
-    "companyUrl": "https://boards.greenhouse.io/samsara",
-    "location": "Remote - US",
-    "city": "US",
-    "remote": true,
-    "url": "https://www.samsara.com/company/careers/roles/8358687?gh_jid=8358687",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-samsara-8358690",
-    "title": "Staff Product Designer",
-    "company": "samsara",
-    "companyUrl": "https://boards.greenhouse.io/samsara",
-    "location": "Remote - US",
-    "city": "US",
-    "remote": true,
-    "url": "https://www.samsara.com/company/careers/roles/8358690?gh_jid=8358690",
-    "platform": "greenhouse",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "gh-wikimedia-8319366",
-    "title": "Senior UX Designer",
-    "company": "wikimedia",
-    "companyUrl": "https://boards.greenhouse.io/wikimedia",
-    "location": "Remote",
-    "city": "",
-    "remote": true,
-    "url": "https://job-boards.greenhouse.io/wikimedia/jobs/8319366",
-    "platform": "greenhouse",
-    "roleType": "ux_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "ab-benchling-4c4187c8-b367-4aff-bfc4-3946d94f8210",
-    "title": "Product Designer, Chemistry",
-    "company": "benchling",
-    "companyUrl": "https://jobs.ashbyhq.com/benchling",
-    "location": "Boston, MA",
-    "city": "Boston",
-    "remote": true,
-    "url": "https://jobs.ashbyhq.com/benchling/4c4187c8-b367-4aff-bfc4-3946d94f8210",
-    "platform": "ashby",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
-  },
-  {
-    "id": "ab-canals-b75f3745-9d7c-4dfb-a559-2a1f3118ac14",
-    "title": "Senior Product Designer ",
-    "company": "canals",
-    "companyUrl": "https://jobs.ashbyhq.com/canals",
-    "location": "New York",
-    "city": "New York",
-    "remote": true,
-    "url": "https://jobs.ashbyhq.com/canals/b75f3745-9d7c-4dfb-a559-2a1f3118ac14",
-    "platform": "ashby",
-    "roleType": "product_design",
-    "posted": "2026-11-06",
-    "scraped": "2026-11-20"
+    "scraped": "2026-11-21"
   }
 ]
